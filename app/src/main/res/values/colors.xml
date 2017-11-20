@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="colorPrimary">#ffcf05</color>
+    <color name="colorPrimaryDark">#ffbc58</color>
+    <color name="colorAccent">#258715</color>
+
+    <!-- Custom colors -->
+    <color name="lightBrown">#de8958</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorGrey">#b1a9a9</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorSeaGreen">#71c7a0</color>
+    <color name="colorRed">#da000b</color>
+    <color name="lightOrange">#FFCF86</color>
+    <color name="colorPink">#d952d4</color>
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.cashless.easycash">
+
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        android:required="true" />
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        android:required="true" />
+    <uses-permission
+        android:name="android.permission.ACCESS_WIFI_STATE"
+        android:required="true" />
+    <uses-permission
+        android:name="android.permission.CHANGE_WIFI_STATE"
+        android:required="true" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission-sdk-23 android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission-sdk-23 android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ico"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:theme,android:icon">
+        <activity android:name=".ChoosePhoneActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PasscodeActivity" />
+        <activity android:name=".SelectBankActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SendReceive" />
+        <activity android:name=".SendActivity" />
+        <activity android:name=".PhoneVerification" />
+        <activity android:name=".ShowVerifiedActivity" />
+        <activity
+            android:name="com.matesnetwork.Cognalys.VerifyMobile"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
+        <activity android:name=".CheckShowActivity" />
+        <activity android:name=".SavedPasscode" />
+
+        <receiver android:name=".CognalysVerification">
+            <intent-filter>
+                <action android:name="com.matesnetwork.cognalys" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".CreateVpaActivity" />
+        <activity android:name=".ReceiveActivity"></activity>
+        <activity android:name=".TransactionProcessingActivity"></activity>
+        <activity android:name=".InvestActivity" />
+        <activity android:name=".FAQs" />
+        <activity android:name=".Transactions"></activity>
+    </application>
+
+</manifest>

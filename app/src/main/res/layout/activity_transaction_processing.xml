@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="com.cashless.easycash.TransactionProcessingActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textColor="#000000"
+        android:text="Transaction Processing..."
+        android:id="@+id/processingTextView"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/transaction_details"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:paddingTop="40dp"
+            android:background="#0000ff"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="Transaction Successsful..\nYour Transaction id is:"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:id="@+id/transaction_id"
+            android:text="ABC1736323"
+            android:background="#0000ff"
+            android:textColor="#ffff11"
+            android:paddingBottom="40dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorRed"
+            android:id="@+id/transaction_home_button"
+            android:textColor="#ffffff"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:text="HOME Screen"/>
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/show_check_gif"
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher"
+            />
+    </LinearLayout>
+</LinearLayout>

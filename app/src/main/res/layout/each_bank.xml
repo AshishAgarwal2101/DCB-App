@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/each_bank_view"
+    android:padding="10dp"
+    >
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/bank_logo"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Bank name"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:id="@+id/bank_name"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/bank_logo"
+        android:layout_toEndOf="@+id/bank_logo"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
+
+    <RadioButton
+        android:id="@+id/radio_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        />
+
+</RelativeLayout>
