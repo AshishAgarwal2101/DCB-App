@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\Ashish\AndroidStudioProjects\DcbHackathon-CodeBots\cognalys\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\Ashish\AndroidStudioProjects\DcbHackathon-CodeBots\cognalys\src\debug\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Users\Ashish\AndroidStudioProjects\DCB App\cognalys\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\Ashish\AndroidStudioProjects\DCB App\cognalys\src\debug\shaders"/></dataSet></merger>

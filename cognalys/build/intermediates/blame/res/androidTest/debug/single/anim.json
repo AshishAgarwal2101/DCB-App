@@ -2,5 +2,9 @@
     {
         "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DcbHackathon-CodeBots\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\rotate.xml",
         "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DcbHackathon-CodeBots\\cognalys\\build\\intermediates\\bundles\\debug\\res\\anim\\rotate.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\rotate.xml",
+        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\anim\\rotate.xml"
     }
 ]

@@ -80,4 +80,10 @@ public class TransactionProcessingActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        myRef.child("sending").removeValue();
+    }
 }

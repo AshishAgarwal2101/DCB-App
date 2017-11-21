@@ -1,5 +1,13 @@
 [
     {
+        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\verify_mobile.xml",
+        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\menu\\verify_mobile.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\main.xml",
+        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\menu\\main.xml"
+    },
+    {
         "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DcbHackathon-CodeBots\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\verify_mobile.xml",
         "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DcbHackathon-CodeBots\\cognalys\\build\\intermediates\\bundles\\debug\\res\\menu\\verify_mobile.xml"
     },
