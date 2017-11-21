@@ -31,7 +31,7 @@ public class ReceiveActivity extends AppCompatActivity {
     public final String TAG = "abc";
     Button receiverDoneButton;
     String userid;
-    int amount;
+    int amount,k=0;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Varsha",id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
 
     @Override
@@ -41,9 +41,15 @@ public class ReceiveActivity extends AppCompatActivity {
 
         receiverDoneButton = (Button)findViewById(R.id.receiver_done_button);
 
+        load();
+
+        String name1=name;
+        if(name.contains(" ")) {
+            name1 = name.substring(0, name.indexOf(" "));
+        }
         id= UUID.randomUUID().toString();
         myRef = FirebaseDatabase.getInstance().getReference();
-        myRef.child("users").child(id).child("name").setValue(name);
+        myRef.child("users").child(id).child("name").setValue(name1);
         myRef.child("users").child(id).child("vpa").setValue(vpa);
 
         receiverDoneButton.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +60,6 @@ public class ReceiveActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -85,8 +90,6 @@ public class ReceiveActivity extends AppCompatActivity {
                 }catch (Exception e){
 
                 }
-
-                save();
             }
 
             @Override
@@ -113,14 +116,14 @@ public class ReceiveActivity extends AppCompatActivity {
     }
     public void load() {
         SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
-        phn = sharedPreferences.getString("phone", phn);
-        bankName = sharedPreferences.getString("bankName", bankName);
-        vpa = sharedPreferences.getString("vpa", vpa);
-        accno = sharedPreferences.getString("accno",accno);
-        name = sharedPreferences.getString("name", name);
-        branch = sharedPreferences.getString("branch",branch);
-        ifsc = sharedPreferences.getString("ifsc", ifsc);
-        vpaPin = sharedPreferences.getString("vpapin",vpaPin);
-        appPin = sharedPreferences.getString("apppin",appPin);
+        phn = sharedPreferences.getString("phone"+k, phn);
+        bankName = sharedPreferences.getString("bankName"+k, bankName);
+        vpa = sharedPreferences.getString("vpa"+k, vpa);
+        accno = sharedPreferences.getString("accno"+k,accno);
+        name = sharedPreferences.getString("name"+k, name);
+        branch = sharedPreferences.getString("branch"+k,branch);
+        ifsc = sharedPreferences.getString("ifsc"+k, ifsc);
+        vpaPin = sharedPreferences.getString("vpapin"+k,vpaPin);
+        appPin = sharedPreferences.getString("apppin"+k,appPin);
     }
 }

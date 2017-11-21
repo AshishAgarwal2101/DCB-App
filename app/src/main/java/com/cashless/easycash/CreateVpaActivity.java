@@ -7,14 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CreateVpaActivity extends AppCompatActivity {
     private TextView tVpa;
     static int i=0,k=0,t=0;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Ronit",id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
-Intent i1,i2;
+    Intent i1,i2;
     Button b1,b2;
+    EditText username_edittext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,7 @@ Intent i1,i2;
         i2=new Intent(this,ChoosePhoneActivity.class);
         b1=(Button)findViewById(R.id.button2);
         b2=(Button)findViewById(R.id.newVPA);
+        username_edittext = (EditText)findViewById(R.id.username_edittext);
         tVpa = (TextView) findViewById(R.id.vpa_field);
         SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         phn = sharedPreferences.getString("phone"+t, phn);
@@ -30,10 +34,19 @@ Intent i1,i2;
         tVpa.setText(p+"@ybl");
         phn=p;
         vpa=p+"@ybl";
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(i1);
+                String name1 = username_edittext.getText().toString();
+                if(name1 == ""){
+                    Toast.makeText(CreateVpaActivity.this, "Please enter your Name", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    name = name1;
+                    save();
+                    startActivity(i1);
+                }
             }
         });
         b2.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +69,7 @@ Intent i1,i2;
         editor.putString("ifsc" + i, ifsc);
         editor.putString("vpapin" + i, vpaPin);
         editor.putString("apppin" + i, appPin);
-        ++i;
+        //++i;
         editor.commit();
     }
     public void load() {
@@ -70,6 +83,6 @@ Intent i1,i2;
         ifsc = sharedPreferences.getString("ifsc"+k, ifsc);
         vpaPin = sharedPreferences.getString("vpapin"+k,vpaPin);
         appPin = sharedPreferences.getString("apppin"+k,appPin);
-        ++k;
+        //++k;
     }
 }

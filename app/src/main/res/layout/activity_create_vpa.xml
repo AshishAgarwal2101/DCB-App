@@ -10,8 +10,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your Name:"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorRed"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/round_border"
+            android:layout_marginTop="5dp"
+            android:id="@+id/username_edittext"
+            android:gravity="center"
+            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,7 +71,7 @@
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="280dp"
         android:background="@color/colorAccent"
         android:textColor="@color/colorWhite"
         android:text="OK"
@@ -69,7 +84,7 @@
         android:id="@+id/newVPA"
         android:background="@color/colorAccent"
         android:textColor="@color/colorWhite"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="340dp"
         android:textSize="20dp"
         android:textStyle="bold"
         android:text="+Create New VPA"/>
