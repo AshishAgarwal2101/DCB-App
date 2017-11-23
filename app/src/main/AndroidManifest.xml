@@ -21,6 +21,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <uses-permission-sdk-23 android:name="android.permission.READ_CALL_LOG" />
     <uses-permission-sdk-23 android:name="android.permission.READ_PHONE_STATE" />
@@ -49,7 +51,7 @@
         <activity android:name=".ShowVerifiedActivity" />
         <activity
             android:name="com.matesnetwork.Cognalys.VerifyMobile"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity android:name=".CheckShowActivity" />
         <activity android:name=".SavedPasscode" />
 
@@ -60,11 +62,11 @@
         </receiver>
 
         <activity android:name=".CreateVpaActivity" />
-        <activity android:name=".ReceiveActivity"></activity>
-        <activity android:name=".TransactionProcessingActivity"></activity>
+        <activity android:name=".ReceiveActivity" />
+        <activity android:name=".TransactionProcessingActivity" />
         <activity android:name=".InvestActivity" />
         <activity android:name=".FAQs" />
-        <activity android:name=".Transactions"></activity>
+        <activity android:name=".Transactions" />
     </application>
 
 </manifest>

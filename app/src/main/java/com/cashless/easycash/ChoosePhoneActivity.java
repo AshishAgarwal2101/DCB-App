@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -24,41 +25,43 @@ public class ChoosePhoneActivity  extends AppCompatActivity{
     TextView t1,t2;
     RadioButton r1;
     RadioGroup g;
+    EditText e;
     String s1="Jio 4G";
     Button b;
     Intent i;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Varsha",id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
     int k=0;
-
+    Intent newNum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_phone_layout);
-
+        newNum= new Intent();
+        newNum= getIntent();
         load();
-        if(!vpa.equals("534534@ybl")){
-            Intent intent = new Intent(ChoosePhoneActivity.this, MainActivity.class);
-            startActivity(intent);
+        if(newNum.hasExtra("new"))
+        {
+
+        }
+        else {
+            if(!(vpa.equals("534534@ybl"))) {
+                Intent intent = new Intent(ChoosePhoneActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
         }
 
         t1= (TextView) findViewById(R.id.HelloText);
-        t2= (TextView) findViewById(R.id.chooseSimText);
-        g= (RadioGroup) findViewById(R.id.radioGroup);
+        t2= (TextView) findViewById(R.id.enterNumberText);
+        e= (EditText)findViewById(R.id.enterNumber);
         b= (Button) findViewById(R.id.button);
         i= new Intent(ChoosePhoneActivity.this, PhoneVerification.class);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int id= g.getCheckedRadioButtonId();
-                if(id==-1)
-                {
-                    Toast.makeText(ChoosePhoneActivity.this,"Select one sim",Toast.LENGTH_SHORT).show();
-                }else {
-                    r1 = (RadioButton) findViewById(id);
-                    i.putExtra("radio", r1.getText());
-                    startActivity(i);
-                }
+                String number= e.getText().toString();
+                i.putExtra("number",number);
+                startActivity(i);
             }
         });
 

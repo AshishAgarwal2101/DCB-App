@@ -16,7 +16,7 @@ public class CognalysVerification extends BroadcastReceiver {
         // Toast.makeText(context,"Verified Mobile : "+ mobile, Toast.LENGTH_SHORT).show();
         //Toast.makeText(context, "Verified App User ID : "+app_user_id, Toast.LENGTH_SHORT).show();
         Intent i= new Intent();
-        i.setClassName("com.cashless.easycash.CognalysVerification", "com.cashless.easycash.ShowVerifiedActivity");
+        i.setClassName("com.cashless.easycash", "com.cashless.easycash.ShowVerifiedActivity");
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(i);
     }

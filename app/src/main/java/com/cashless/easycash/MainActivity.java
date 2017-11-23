@@ -9,7 +9,8 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity{
 
-    ImageView bSend, bReceive, bTransaction, bInvest, bFAQs;
+    ImageView bSend, bReceive, bTransaction, bInvest, bFAQs, bAddNewNumber;
+    Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity{
         bTransaction = (ImageView) findViewById(R.id.icon_trans);
         bInvest = (ImageView) findViewById(R.id.icon_invest);
         bFAQs = (ImageView)findViewById(R.id.icon_faqs);
+        bAddNewNumber=(ImageView)findViewById(R.id.icon_num);
+        i= new Intent(this, ChoosePhoneActivity.class);
+        i.putExtra("new","newNumber");
 
         bSend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +53,12 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, FAQs.class));
+            }
+        });
+        bAddNewNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(i);
             }
         });
     }

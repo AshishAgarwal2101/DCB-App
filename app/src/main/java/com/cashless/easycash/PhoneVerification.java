@@ -16,17 +16,17 @@ public class PhoneVerification extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_verification);
         i= getIntent();
-        sim= i.getStringExtra("radio");
+        num= i.getStringExtra("number");
         //Toast.makeText(this,sim,Toast.LENGTH_SHORT).show();
 
-        if(sim.equals(s1))
+      /*  if(sim.equals(s1))
         {
             num=num1;
         }
         else if(sim.equals(s2))
         {
             num=num2;
-        }
+        }*/
 
         Intent in = new Intent(PhoneVerification.this, VerifyMobile.class);
 
