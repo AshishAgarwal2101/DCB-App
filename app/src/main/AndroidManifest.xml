@@ -44,7 +44,10 @@
         </activity>
         <activity android:name=".PasscodeActivity" />
         <activity android:name=".SelectBankActivity" />
-        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SendReceive" />
         <activity android:name=".SendActivity" />
         <activity android:name=".PhoneVerification" />

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.cashless.easycash.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/send"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon_send"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:padding="20dp"
+            android:src="@drawable/ic_play_for_work_up_black_36dp"
+            app:civ_border_color="@color/colorSeaGreen"
+            app:civ_border_width="6dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SEND"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:id="@+id/textView2"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/receive"
+        android:layout_above="@+id/invest"
+        android:layout_toRightOf="@+id/send"
+        android:layout_toEndOf="@+id/send">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon_receive"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:padding="20dp"
+            android:src="@drawable/ic_play_for_work_black_36dp"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="6dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RECEIVE"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/transactions"
+        android:layout_below="@+id/send"
+        android:layout_alignLeft="@+id/send"
+        android:layout_alignStart="@+id/send">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon_trans"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:padding="20dp"
+            android:src="@drawable/ic_swap_horiz_black_36dp"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="6dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TRANSACTIONS"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/invest"
+        android:layout_below="@+id/send"
+        android:layout_alignLeft="@+id/receive"
+        android:layout_alignStart="@+id/receive">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon_invest"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:padding="20dp"
+            android:src="@drawable/ic_attach_money_black_36dp"
+            app:civ_border_color="@color/colorRed"
+            app:civ_border_width="6dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="INVEST"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/faqs"
+        android:layout_below="@+id/transactions"
+        android:layout_alignStart="@+id/transactions">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon_faqs"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:padding="20dp"
+            android:src="@drawable/ic_question_answer_black_24dp"
+            app:civ_border_color="@color/colorPink"
+            app:civ_border_width="6dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FAQs"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/newNum"
+        android:layout_below="@+id/invest"
+        android:layout_toEndOf="@+id/transactions">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon_num"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:padding="20dp"
+            android:src="@drawable/ic_note_add_black_24dp"
+            app:civ_border_color="#0000aa"
+            app:civ_border_width="6dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ADD NEW NUMBER"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
