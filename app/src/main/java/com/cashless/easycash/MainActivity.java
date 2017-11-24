@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         navigationView.setCheckedItem(R.id.nav_account_1);
-        Toast.makeText(this, "Using Account 1: xxxx xxxx xxxx xxxx", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Using Account 1: xxxx xxxx xxxx 1414", Toast.LENGTH_SHORT).show();
 
         bSend = (ImageView) findViewById(R.id.icon_send);
         bReceive = (ImageView) findViewById(R.id.icon_receive);
@@ -108,9 +108,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_account_1) {
-            Toast.makeText(this, "Using Account 1: xxxx xxxx xxxx xxxx", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Using Account 1: xxxx xxxx xxxx 1414", Toast.LENGTH_SHORT).show();
+
         } else if (id == R.id.nav_account_2) {
-            Toast.makeText(this, "Using Account 2: xxxx xxxx xxxx xxxx", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Using Account 2: xxxx xxxx xxxx 2745", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -86,9 +86,14 @@ public class ReceiveActivity extends AppCompatActivity {
                         mBuilder.setContentText("Enjoy!!");
                         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                         mNotificationManager.notify(1, mBuilder.build());
+
+                        //Return to main screen after removing data from firebase
+                        myRef.child("users").child(id).removeValue();
+                        Intent intent = new Intent(ReceiveActivity.this, MainActivity.class);
+                        startActivity(intent);
                     }
                 }catch (Exception e){
-
+                    Log.e("ReceiverActivity", e.toString());
                 }
             }
 
