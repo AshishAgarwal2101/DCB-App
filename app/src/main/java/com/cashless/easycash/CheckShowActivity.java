@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.cashless.easycash.Helpers.SPHelper;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +30,8 @@ Intent in;
     private DatabaseReference myRef;
     String vpas,phone;
     static int i=0,k=0;
-    String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Ronit",id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
+    String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Ronit",
+            id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
     private ImageView imageView;
 
     @Override
@@ -83,33 +85,28 @@ Intent in;
 
     }
     public void save() {
-        SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("phone"+i, phn);
-        editor.putString("bankName"+i, bankName);
-        editor.putString("vpa"+i, vpa);
-        editor.putString("accno"+i,accno);
-        editor.putString("name"+i, name);
-        editor.putString("branch"+i,branch);
-        editor.putString("ifsc"+i,ifsc);
-        editor.putString("vpapin"+i,vpaPin);
-        editor.putString("apppin"+i,appPin);
+        SPHelper.setSP(getApplicationContext(),"phone"+i, phn);
+        SPHelper.setSP(getApplicationContext(),"bankName"+i, bankName);
+        SPHelper.setSP(getApplicationContext(),"vpa"+i, vpa);
+        SPHelper.setSP(getApplicationContext(),"accno"+i,accno);
+        SPHelper.setSP(getApplicationContext(),"name"+i, name);
+        SPHelper.setSP(getApplicationContext(),"branch"+i,branch);
+        SPHelper.setSP(getApplicationContext(),"ifsc"+i,ifsc);
+        SPHelper.setSP(getApplicationContext(),"vpapin"+i,vpaPin);
+        SPHelper.setSP(getApplicationContext(),"apppin"+i,appPin);
         ++i;
-        editor.commit();
-
     }
 
     public void load() {
-        SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
-        phn = sharedPreferences.getString("phone"+k, phn);
-        bankName = sharedPreferences.getString("bankName"+k, bankName);
-        vpa = sharedPreferences.getString("vpa"+k, vpa);
-        accno = sharedPreferences.getString("accno"+k,accno);
-        name = sharedPreferences.getString("name"+k, name);
-        branch = sharedPreferences.getString("branch"+k,branch);
-        ifsc = sharedPreferences.getString("ifsc"+k, ifsc);
-        vpaPin = sharedPreferences.getString("vpapin"+k,vpaPin);
-        appPin = sharedPreferences.getString("apppin"+k,appPin);
+        phn = SPHelper.getSP(getApplicationContext(),"phone"+k, phn);
+        bankName = SPHelper.getSP(getApplicationContext(),"bankName"+k, bankName);
+        vpa = SPHelper.getSP(getApplicationContext(),"vpa"+k, vpa);
+        accno = SPHelper.getSP(getApplicationContext(),"accno"+k,accno);
+        name = SPHelper.getSP(getApplicationContext(),"name"+k, name);
+        branch = SPHelper.getSP(getApplicationContext(),"branch"+k,branch);
+        ifsc = SPHelper.getSP(getApplicationContext(),"ifsc"+k, ifsc);
+        vpaPin = SPHelper.getSP(getApplicationContext(),"vpapin"+k,vpaPin);
+        appPin = SPHelper.getSP(getApplicationContext(),"apppin"+k,appPin);
         ++k;
     }
 

@@ -4,7 +4,6 @@ package com.cashless.easycash;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +14,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.cashless.easycash.Helpers.SPHelper;
 
 /**
  * Created by Ashish on 11/4/2017.
@@ -29,7 +30,8 @@ public class ChoosePhoneActivity  extends AppCompatActivity{
     String s1="Jio 4G";
     Button b;
     Intent i;
-    String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Varsha",id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
+    String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Varsha",
+            id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
     int k=0;
     Intent newNum;
     @Override
@@ -64,22 +66,17 @@ public class ChoosePhoneActivity  extends AppCompatActivity{
                 startActivity(i);
             }
         });
-
-
-
-
-
     }
+
     public void load() {
-        SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
-        phn = sharedPreferences.getString("phone"+k, phn);
-        bankName = sharedPreferences.getString("bankName"+k, bankName);
-        vpa = sharedPreferences.getString("vpa"+k, vpa);
-        accno = sharedPreferences.getString("accno"+k,accno);
-        name = sharedPreferences.getString("name"+k, name);
-        branch = sharedPreferences.getString("branch"+k,branch);
-        ifsc = sharedPreferences.getString("ifsc"+k, ifsc);
-        vpaPin = sharedPreferences.getString("vpapin"+k,vpaPin);
-        appPin = sharedPreferences.getString("apppin"+k,appPin);
+        phn = SPHelper.getSP(getApplicationContext(),"phone"+k, phn);
+        bankName = SPHelper.getSP(getApplicationContext(),"bankName"+k, bankName);
+        vpa = SPHelper.getSP(getApplicationContext(),"vpa"+k, vpa);
+        accno = SPHelper.getSP(getApplicationContext(),"accno"+k,accno);
+        name = SPHelper.getSP(getApplicationContext(),"name"+k, name);
+        branch = SPHelper.getSP(getApplicationContext(),"branch"+k,branch);
+        ifsc = SPHelper.getSP(getApplicationContext(),"ifsc"+k, ifsc);
+        vpaPin = SPHelper.getSP(getApplicationContext(),"vpapin"+k,vpaPin);
+        appPin = SPHelper.getSP(getApplicationContext(),"apppin"+k,appPin);
     }
 }

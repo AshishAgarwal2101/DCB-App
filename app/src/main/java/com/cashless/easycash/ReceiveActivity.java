@@ -5,9 +5,6 @@ import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Handler;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
@@ -17,6 +14,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.cashless.easycash.Helpers.SPHelper;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,7 +30,8 @@ public class ReceiveActivity extends AppCompatActivity {
     Button receiverDoneButton;
     String userid;
     int amount,k=0;
-    String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Varsha",id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
+    String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Varsha",
+            id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,29 +111,26 @@ public class ReceiveActivity extends AppCompatActivity {
     }
 
     public void save() {
-        SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("phone", phn);
-        editor.putString("bankName", bankName);
-        editor.putString("vpa", vpa);
-        editor.putString("accno",accno);
-        editor.putString("name", name);
-        editor.putString("branch",branch);
-        editor.putString("ifsc",ifsc);
-        editor.putString("vpapin",vpaPin);
-        editor.putString("apppin",appPin);
-        editor.commit();
+        SPHelper.setSP(getApplicationContext(),"phone", phn);
+        SPHelper.setSP(getApplicationContext(),"bankName", bankName);
+        SPHelper.setSP(getApplicationContext(),"vpa", vpa);
+        SPHelper.setSP(getApplicationContext(),"accno",accno);
+        SPHelper.setSP(getApplicationContext(),"name", name);
+        SPHelper.setSP(getApplicationContext(),"branch",branch);
+        SPHelper.setSP(getApplicationContext(),"ifsc",ifsc);
+        SPHelper.setSP(getApplicationContext(),"vpapin",vpaPin);
+        SPHelper.setSP(getApplicationContext(),"apppin",appPin);
     }
     public void load() {
-        SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
-        phn = sharedPreferences.getString("phone"+k, phn);
-        bankName = sharedPreferences.getString("bankName"+k, bankName);
-        vpa = sharedPreferences.getString("vpa"+k, vpa);
-        accno = sharedPreferences.getString("accno"+k,accno);
-        name = sharedPreferences.getString("name"+k, name);
-        branch = sharedPreferences.getString("branch"+k,branch);
-        ifsc = sharedPreferences.getString("ifsc"+k, ifsc);
-        vpaPin = sharedPreferences.getString("vpapin"+k,vpaPin);
-        appPin = sharedPreferences.getString("apppin"+k,appPin);
+        phn = SPHelper.getSP(getApplicationContext(),"phone"+k, phn);
+        bankName = SPHelper.getSP(getApplicationContext(),"bankName"+k, bankName);
+        vpa = SPHelper.getSP(getApplicationContext(),"vpa"+k, vpa);
+        accno = SPHelper.getSP(getApplicationContext(),"accno"+k,accno);
+        name = SPHelper.getSP(getApplicationContext(),"name"+k, name);
+        branch = SPHelper.getSP(getApplicationContext(),"branch"+k,branch);
+        ifsc = SPHelper.getSP(getApplicationContext(),"ifsc"+k, ifsc);
+        vpaPin = SPHelper.getSP(getApplicationContext(),"vpapin"+k,vpaPin);
+        appPin = SPHelper.getSP(getApplicationContext(),"apppin"+k,appPin);
+        appPin = SPHelper.getSP(getApplicationContext(),"apppin"+k,appPin);
     }
 }
