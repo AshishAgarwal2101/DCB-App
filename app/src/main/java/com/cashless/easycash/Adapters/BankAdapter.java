@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
  * Created by Varsha on 05-11-2017.
  */
 
-public class BankAdapter extends RecyclerView.Adapter<BankAdapter.ViewHolder> {
+public class BankAdapter extends RecyclerView.Adapter<BankAdapter.ViewHolder>{
     private Context context;
     private ArrayList<Bank> mBankNames;
     private int lastCheckedPosition = -1;
@@ -52,6 +53,7 @@ public class BankAdapter extends RecyclerView.Adapter<BankAdapter.ViewHolder> {
     public int getItemCount() {
         return mBankNames.size();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 

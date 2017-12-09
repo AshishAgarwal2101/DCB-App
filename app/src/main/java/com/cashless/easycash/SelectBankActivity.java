@@ -20,7 +20,7 @@ import java.util.Comparator;
  * Created by Ashish on 11/4/2017.
  */
 
-public class SelectBankActivity extends AppCompatActivity {
+public class SelectBankActivity extends AppCompatActivity{
 
     Intent i,intent;
     String sim;
@@ -60,6 +60,7 @@ public class SelectBankActivity extends AppCompatActivity {
         mBankView.setLayoutManager(mBankLayoutManager);
         mBankAdapter = new BankAdapter(this, bankNames);
         mBankView.setAdapter(mBankAdapter);
+
         b= (Button)findViewById(R.id.proceed_after_bank);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
