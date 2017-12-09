@@ -13,6 +13,8 @@ import com.cashless.easycash.Adapters.BankAdapter;
 import com.cashless.easycash.Beans.Bank;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Created by Ashish on 11/4/2017.
@@ -43,6 +45,14 @@ public class SelectBankActivity extends AppCompatActivity {
         bankNames.add(new Bank(R.drawable.dcb_logo, "DCB Bank", false));
         bankNames.add(new Bank(R.drawable.allahabad_logo, "Allahabad Bank", false));
         bankNames.add(new Bank(R.drawable.bob_logo, "Bank of Baroda", false));
+
+        //To sort the ArrayList
+        Collections.sort(bankNames, new Comparator<Bank>() {
+            @Override
+            public int compare(Bank lhs, Bank rhs) {
+                return lhs.getName().compareTo(rhs.getName());
+            }
+        });
 
         mBankView = (RecyclerView) findViewById(R.id.bank_view);
         mBankView.setHasFixedSize(true);
