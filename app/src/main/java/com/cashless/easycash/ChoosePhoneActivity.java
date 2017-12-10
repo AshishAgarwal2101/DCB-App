@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,7 +33,7 @@ public class ChoosePhoneActivity  extends AppCompatActivity{
     Intent i;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Varsha",
             id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
-    int k=0;
+    int k=0,currentAccount=0;
     Intent newNum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,11 @@ public class ChoosePhoneActivity  extends AppCompatActivity{
         setContentView(R.layout.choose_phone_layout);
         newNum= new Intent();
         newNum= getIntent();
+
+        loadAccountBeingUsed();
+        k=currentAccount;
         load();
+
         if(newNum.hasExtra("new"))
         {
 
@@ -69,14 +74,18 @@ public class ChoosePhoneActivity  extends AppCompatActivity{
     }
 
     public void load() {
-        phn = SPHelper.getSP(getApplicationContext(),"phone"+k, phn);
-        bankName = SPHelper.getSP(getApplicationContext(),"bankName"+k, bankName);
-        vpa = SPHelper.getSP(getApplicationContext(),"vpa"+k, vpa);
-        accno = SPHelper.getSP(getApplicationContext(),"accno"+k,accno);
-        name = SPHelper.getSP(getApplicationContext(),"name"+k, name);
-        branch = SPHelper.getSP(getApplicationContext(),"branch"+k,branch);
-        ifsc = SPHelper.getSP(getApplicationContext(),"ifsc"+k, ifsc);
-        vpaPin = SPHelper.getSP(getApplicationContext(),"vpapin"+k,vpaPin);
-        appPin = SPHelper.getSP(getApplicationContext(),"apppin"+k,appPin);
+        phn = SPHelper.getSP(getApplicationContext(),"phone"+k, "8888877777");
+        bankName = SPHelper.getSP(getApplicationContext(),"bankName"+k, "DCB");
+        vpa = SPHelper.getSP(getApplicationContext(),"vpa"+k, "534534@ybl");
+        accno = SPHelper.getSP(getApplicationContext(),"accno"+k,"31241441414");
+        name = SPHelper.getSP(getApplicationContext(),"name"+k, "Ronit");
+        branch = SPHelper.getSP(getApplicationContext(),"branch"+k,"Jayanagar");
+        ifsc = SPHelper.getSP(getApplicationContext(),"ifsc"+k, "ubi00000127+");
+        vpaPin = SPHelper.getSP(getApplicationContext(),"vpapin"+k,"1234");
+        appPin = SPHelper.getSP(getApplicationContext(),"apppin"+k,"2345");
+        //++k;
+    }
+    public void loadAccountBeingUsed(){
+        currentAccount = SPHelper.getSP1(getApplicationContext(),"currentAccount",currentAccount);
     }
 }
