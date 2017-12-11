@@ -29,7 +29,7 @@ public class ReceiveActivity extends AppCompatActivity {
     public final String TAG = "abc";
     Button receiverDoneButton;
     String userid;
-    int amount,k=0;
+    int amount,k=0,currentAccount=0;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Varsha",
             id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
 
@@ -40,6 +40,8 @@ public class ReceiveActivity extends AppCompatActivity {
 
         receiverDoneButton = (Button)findViewById(R.id.receiver_done_button);
 
+        loadAccountBeingUsed();
+        k=currentAccount;
         load();
 
         String name1=name;
@@ -111,26 +113,34 @@ public class ReceiveActivity extends AppCompatActivity {
     }
 
     public void save() {
-        SPHelper.setSP(getApplicationContext(),"phone", phn);
-        SPHelper.setSP(getApplicationContext(),"bankName", bankName);
-        SPHelper.setSP(getApplicationContext(),"vpa", vpa);
-        SPHelper.setSP(getApplicationContext(),"accno",accno);
-        SPHelper.setSP(getApplicationContext(),"name", name);
-        SPHelper.setSP(getApplicationContext(),"branch",branch);
-        SPHelper.setSP(getApplicationContext(),"ifsc",ifsc);
-        SPHelper.setSP(getApplicationContext(),"vpapin",vpaPin);
-        SPHelper.setSP(getApplicationContext(),"apppin",appPin);
+        SPHelper.setSP(getApplicationContext(),"phone"+k, phn);
+        SPHelper.setSP(getApplicationContext(),"bankName"+k, bankName);
+        SPHelper.setSP(getApplicationContext(),"vpa"+k, vpa);
+        SPHelper.setSP(getApplicationContext(),"accno"+k,accno);
+        SPHelper.setSP(getApplicationContext(),"name"+k, name);
+        SPHelper.setSP(getApplicationContext(),"branch"+k,branch);
+        SPHelper.setSP(getApplicationContext(),"ifsc"+k,ifsc);
+        SPHelper.setSP(getApplicationContext(),"vpapin"+k,vpaPin);
+        SPHelper.setSP(getApplicationContext(),"apppin"+k,appPin);
+        //++i;
     }
+
     public void load() {
-        phn = SPHelper.getSP(getApplicationContext(),"phone"+k, phn);
-        bankName = SPHelper.getSP(getApplicationContext(),"bankName"+k, bankName);
-        vpa = SPHelper.getSP(getApplicationContext(),"vpa"+k, vpa);
-        accno = SPHelper.getSP(getApplicationContext(),"accno"+k,accno);
-        name = SPHelper.getSP(getApplicationContext(),"name"+k, name);
-        branch = SPHelper.getSP(getApplicationContext(),"branch"+k,branch);
-        ifsc = SPHelper.getSP(getApplicationContext(),"ifsc"+k, ifsc);
-        vpaPin = SPHelper.getSP(getApplicationContext(),"vpapin"+k,vpaPin);
-        appPin = SPHelper.getSP(getApplicationContext(),"apppin"+k,appPin);
-        appPin = SPHelper.getSP(getApplicationContext(),"apppin"+k,appPin);
+        phn = SPHelper.getSP(getApplicationContext(),"phone"+k, "8888877777");
+        bankName = SPHelper.getSP(getApplicationContext(),"bankName"+k, "DCB");
+        vpa = SPHelper.getSP(getApplicationContext(),"vpa"+k, "534534@ybl");
+        accno = SPHelper.getSP(getApplicationContext(),"accno"+k,"31241441414");
+        name = SPHelper.getSP(getApplicationContext(),"name"+k, "Ronit");
+        branch = SPHelper.getSP(getApplicationContext(),"branch"+k,"Jayanagar");
+        ifsc = SPHelper.getSP(getApplicationContext(),"ifsc"+k, "ubi00000127+");
+        vpaPin = SPHelper.getSP(getApplicationContext(),"vpapin"+k,"1234");
+        appPin = SPHelper.getSP(getApplicationContext(),"apppin"+k,"2345");
+        //++k;
+    }
+    public void loadAccountBeingUsed(){
+        currentAccount = SPHelper.getSP1(getApplicationContext(),"currentAccount",currentAccount);
+    }
+    public void saveCurrentAccountBeingUsed(){
+        SPHelper.setSP1(getApplicationContext(),"currentAccount",currentAccount);
     }
 }
