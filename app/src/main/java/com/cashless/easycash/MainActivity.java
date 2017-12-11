@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity
 
     ImageView bSend, bReceive, bTransaction, bInvest, bFAQs, bAddNewNumber;
     Intent intent;
-    static int i=0,k=0,currentAccount;
+    static int i=0,k=0,currentAccount,maxNumberOfAccounts=4;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Ronit",
             id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
     ArrayList<String> accounts = new ArrayList<>();
@@ -76,7 +76,9 @@ public class MainActivity extends AppCompatActivity
             menu.add(0,u,0,acc);
             u++;
         }
-        menu.add(0,100,0,"Add Account").setIcon(R.drawable.plus); //add account option with id=100
+        if(accounts.size() < maxNumberOfAccounts) {
+            menu.add(0, 100, 0, "Add Account").setIcon(R.drawable.plus); //add account option with id=100
+        }
         menu.getItem(currentAccount).setChecked(true);
         //Toast.makeText(this, "Using Account 1: xxxx xxxx xxxx 1414", Toast.LENGTH_SHORT).show();
 
