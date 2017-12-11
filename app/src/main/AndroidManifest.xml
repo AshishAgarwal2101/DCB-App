@@ -68,6 +68,7 @@
         <activity android:name=".InvestActivity" />
         <activity android:name=".FAQs" />
         <activity android:name=".Transactions" />
+        <activity android:name=".BankAccount"></activity>
     </application>
 
 </manifest>
