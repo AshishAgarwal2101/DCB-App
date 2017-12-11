@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.cashless.easycash.Adapters.BankAdapter;
@@ -25,6 +27,7 @@ public class SelectBankActivity extends AppCompatActivity{
     Intent i,intent;
     String sim;
     ArrayList<Bank> bankNames;
+    public static Boolean selected = false;
     private RecyclerView mBankView;
     private RecyclerView.LayoutManager mBankLayoutManager;
     private RecyclerView.Adapter mBankAdapter;
@@ -61,12 +64,18 @@ public class SelectBankActivity extends AppCompatActivity{
         mBankAdapter = new BankAdapter(this, bankNames);
         mBankView.setAdapter(mBankAdapter);
 
-        b= (Button)findViewById(R.id.proceed_after_bank);
+        b = (Button)findViewById(R.id.proceed_after_bank);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent=new Intent(SelectBankActivity.this,CheckShowActivity.class);
-                startActivity(intent);
+                if(selected) {
+                    intent = new Intent(SelectBankActivity.this, CheckShowActivity.class);
+                    startActivity(intent);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"Select a bank",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
