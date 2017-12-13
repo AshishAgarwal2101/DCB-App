@@ -1,5 +1,6 @@
 package com.cashless.easycash;
 
+import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +13,11 @@ import com.cashless.easycash.Helpers.SPHelper;
 
 import java.util.ArrayList;
 
-public class BankAccount extends FragmentActivity {
+/**
+ * Created by Varsha on 13-12-2017.
+ */
+
+public class BankAccount extends AppCompatActivity{
     Button deleteAccount;
     static int k=0,currentAccount=0;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Ronit",
@@ -42,7 +47,7 @@ public class BankAccount extends FragmentActivity {
             }
         }
 
-        deleteAccount = (Button)findViewById(R.id.delete_account_button);
+        deleteAccount = (Button)findViewById(R.id.delete_accoun);
         deleteAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,4 +89,5 @@ public class BankAccount extends FragmentActivity {
     public void saveCurrentAccountBeingUsed(){
         SPHelper.setSP1(getApplicationContext(),"currentAccount",currentAccount);
     }
+
 }
