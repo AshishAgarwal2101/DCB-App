@@ -31,10 +31,11 @@ public class ReceiveActivity extends AppCompatActivity {
     private DatabaseReference myRef;
     public final String TAG = "abc";
     Button receiverDoneButton;
-    String userid,transactionId,from,to;
-    int amount,k=0,currentAccount=0;
+    String userid,from,to;
+    int k=0,currentAccount=0,numberOfTransactions=0,amountInTransaction=0;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Varsha",
             id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
+    String date="none",with="none",transactionSentOrReceived="Received",transactionId1="none";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class ReceiveActivity extends AppCompatActivity {
         receiverDoneButton = (Button)findViewById(R.id.receiver_done_button);
 
         loadAccountBeingUsed();
+        loadNumberOfTransactions();
         k=currentAccount;
         load();
 
@@ -81,9 +83,10 @@ public class ReceiveActivity extends AppCompatActivity {
                 try {
                     userid = dataSnapshot.child("sending").child(id).getKey();
                     Toast.makeText(ReceiveActivity.this, userid,Toast.LENGTH_SHORT).show();
-                    amount = dataSnapshot.child("sending").child(userid).child("amount").getValue(Integer.class);
-                    transactionId=dataSnapshot.child("sending").child(userid).child("transactionId").getValue(String.class);
+                    amountInTransaction = dataSnapshot.child("sending").child(userid).child("amount").getValue(Integer.class);
+                    transactionId1=dataSnapshot.child("sending").child(userid).child("transactionId").getValue(String.class);
                     from=dataSnapshot.child("sending").child(userid).child("from").getValue(String.class);
+                    with=from;
                     to=name+"("+accno.substring(0,4)+"XXXXXXXX"+accno.substring(accno.length()-4, accno.length())+")";
 
                     //Toast.makeText(ReceiveActivity.this, userid + " " + amount, Toast.LENGTH_LONG).show();
@@ -91,25 +94,32 @@ public class ReceiveActivity extends AppCompatActivity {
                         //Toast.makeText(ReceiveActivity.this, "Notification", Toast.LENGTH_SHORT).show();
                         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(ReceiveActivity.this);
                         mBuilder.setSmallIcon(R.drawable.ico);
-                        mBuilder.setContentTitle("Amount "+amount+" credited in your account!");
+                        mBuilder.setContentTitle("Amount "+amountInTransaction+" credited in your account!");
                         mBuilder.setContentText("Enjoy!!");
                         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                         mNotificationManager.notify(1, mBuilder.build());
 
                         //setting transaction details in databse
                         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-                        Date date = new Date();
-                        String currentDate = dateFormat.format(date);
-                        myRef.child("transactions").child(transactionId).child("date").setValue(currentDate);
-                        myRef.child("transactions").child(transactionId).child("from").setValue(from);
-                        myRef.child("transactions").child(transactionId).child("to").setValue(to);
-                        myRef.child("transactions").child(transactionId).child("amount").setValue(amount);
+                        Date currentDate = new Date();
+                        date = dateFormat.format(currentDate);
+                        myRef.child("transactions").child(transactionId1).child("date").setValue(date);
+                        myRef.child("transactions").child(transactionId1).child("from").setValue(from);
+                        myRef.child("transactions").child(transactionId1).child("to").setValue(to);
+                        myRef.child("transactions").child(transactionId1).child("amount").setValue(amountInTransaction);
 
                         myRef.child("sending").child(userid).child("status").setValue("success");
-                        myRef.child("sending").child(userid).child("amountReceived").setValue(amount);
+                        myRef.child("sending").child(userid).child("amountReceived").setValue(amountInTransaction);
+
+                        k=numberOfTransactions;
+                        saveTransactionDetails();
+                        k=currentAccount;
+                        numberOfTransactions++;
+                        saveNumberOfTransactions();
 
                         //Return to main screen after removing data from firebase
                         myRef.child("users").child(id).removeValue();
+                        myRef.removeEventListener(this);
                         Intent intent = new Intent(ReceiveActivity.this, MainActivity.class);
                         startActivity(intent);
                     }
@@ -162,5 +172,25 @@ public class ReceiveActivity extends AppCompatActivity {
     }
     public void saveCurrentAccountBeingUsed(){
         SPHelper.setSP1(getApplicationContext(),"currentAccount",currentAccount);
+    }
+    public void loadNumberOfTransactions(){
+        numberOfTransactions = SPHelper.getSP1(getApplicationContext(), currentAccount+"numberOfTransactions", numberOfTransactions);
+    }
+    public void saveNumberOfTransactions(){
+        SPHelper.setSP1(getApplicationContext(), currentAccount+"numberOfTransactions", numberOfTransactions);
+    }
+    public void saveTransactionDetails(){
+        SPHelper.setSP(getApplicationContext(),currentAccount+"transactionId"+k, transactionId1);
+        SPHelper.setSP(getApplicationContext(),currentAccount+"date"+k, date);
+        SPHelper.setSP(getApplicationContext(), currentAccount+"to"+k, with);
+        SPHelper.setSP(getApplicationContext(), currentAccount+"transactionSentOrReceived"+k, transactionSentOrReceived);
+        SPHelper.setSP1(getApplicationContext(), currentAccount+"amount"+k, amountInTransaction);
+    }
+    public void loadTransactionDetails(){
+        transactionId1 = SPHelper.getSP(getApplicationContext(),currentAccount+"transactionId"+k, transactionId1);
+        date = SPHelper.getSP(getApplicationContext(),currentAccount+"date"+k, date);
+        with = SPHelper.getSP(getApplicationContext(), currentAccount+"to"+k, with);
+        transactionSentOrReceived = SPHelper.getSP(getApplicationContext(), currentAccount+"transactionSentOrReceived"+k, transactionSentOrReceived);
+        amountInTransaction = SPHelper.getSP1(getApplicationContext(), currentAccount+"amount"+k, amountInTransaction);
     }
 }

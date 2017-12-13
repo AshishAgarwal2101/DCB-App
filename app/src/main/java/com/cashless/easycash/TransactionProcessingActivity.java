@@ -35,9 +35,10 @@ public class TransactionProcessingActivity extends AppCompatActivity {
     private ImageView imageView;
     String userid;
     int amount;
-    static int k=0,currentAccount;
+    int k=0,currentAccount,numberOfTransactions=0,amountInTransaction=0;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Ronit",
             id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
+    String date="none",with="none",transactionSentOrReceived="Sent",transactionId1="none";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +46,13 @@ public class TransactionProcessingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_transaction_processing);
 
         loadAccountBeingUsed();
+        loadNumberOfTransactions();
         k=currentAccount;
         load();
 
         int randomNum = 10000000 + (int)(Math.random() * 99999999);
-        String transactionIdRandom = "ABC"+randomNum;
+        final String transactionIdRandom = "ABC"+randomNum;
+        transactionId1 = transactionIdRandom;
 
         userid = getIntent().getExtras().getString("id");
         amount = getIntent().getExtras().getInt("amount");
@@ -63,7 +66,7 @@ public class TransactionProcessingActivity extends AppCompatActivity {
 
         GifDrawable gifDrawable = null;
         try {
-            gifDrawable = new GifDrawable(getResources(), R.drawable.refresh_gif);
+            gifDrawable = new GifDrawable(getResources(), R.drawable.processing_payment);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -73,10 +76,10 @@ public class TransactionProcessingActivity extends AppCompatActivity {
         myRef = FirebaseDatabase.getInstance().getReference();
         //myRef.child("sending").child("id").setValue(userid);
         myRef.child("sending").child(userid).child("amount").setValue(amount);
-        myRef.child("sending").child(userid).child("transactionId").setValue(transactionIdRandom);
+        myRef.child("sending").child(userid).child("transactionId").setValue(transactionId1);
         myRef.child("sending").child(userid).child("from").setValue(from);
 
-        transactionId.setText(transactionIdRandom);
+        transactionId.setText(transactionId1);
         transactionDetails.setVisibility(View.GONE);
         transactionHomeButton.setVisibility(View.GONE);
 
@@ -87,10 +90,21 @@ public class TransactionProcessingActivity extends AppCompatActivity {
                 try {
                     String status = dataSnapshot.child("sending").child(userid).child("status").getValue(String.class);
                     int amountReceived = dataSnapshot.child("sending").child(userid).child("amountReceived").getValue(Integer.class);
+
                     if(status.equals("success")){
+                        amountInTransaction = dataSnapshot.child("transactions").child(transactionId1).child("amount").getValue(Integer.class);
 
                         //Reconcilation
-                        if(amount == amountReceived) {
+                        if(amountInTransaction == amountReceived) {
+                            date = dataSnapshot.child("transactions").child(transactionId1).child("date").getValue(String.class);
+                            with = dataSnapshot.child("transactions").child(transactionId1).child("to").getValue(String.class);
+                            transactionSentOrReceived = "Sent";
+                            k=numberOfTransactions;
+                            saveTransactionDetails();
+                            k=currentAccount;
+                            numberOfTransactions++;
+                            saveNumberOfTransactions();
+
                             processingTextView.setVisibility(View.GONE);
                             transactionDetails.setVisibility(View.VISIBLE);
                             transactionHomeButton.setVisibility(View.VISIBLE);
@@ -102,9 +116,10 @@ public class TransactionProcessingActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                             imageView.setImageDrawable(gifDrawable);
+                            myRef.removeEventListener(this);
                         }
                         else {
-
+                            //false amount received
                         }
                     }
                 } catch (Exception e) {
@@ -170,6 +185,26 @@ public class TransactionProcessingActivity extends AppCompatActivity {
     }
     public void saveCurrentAccountBeingUsed(){
         SPHelper.setSP1(getApplicationContext(),"currentAccount",currentAccount);
+    }
+    public void loadNumberOfTransactions(){
+        numberOfTransactions = SPHelper.getSP1(getApplicationContext(), currentAccount+"numberOfTransactions", numberOfTransactions);
+    }
+    public void saveNumberOfTransactions(){
+        SPHelper.setSP1(getApplicationContext(), currentAccount+"numberOfTransactions", numberOfTransactions);
+    }
+    public void saveTransactionDetails(){
+        SPHelper.setSP(getApplicationContext(),currentAccount+"transactionId"+k, transactionId1);
+        SPHelper.setSP(getApplicationContext(),currentAccount+"date"+k, date);
+        SPHelper.setSP(getApplicationContext(), currentAccount+"to"+k, with);
+        SPHelper.setSP(getApplicationContext(), currentAccount+"transactionSentOrReceived"+k, transactionSentOrReceived);
+        SPHelper.setSP1(getApplicationContext(), currentAccount+"amount"+k, amountInTransaction);
+    }
+    public void loadTransactionDetails(){
+        transactionId1 = SPHelper.getSP(getApplicationContext(),currentAccount+"transactionId"+k, transactionId1);
+        date = SPHelper.getSP(getApplicationContext(),currentAccount+"date"+k, date);
+        with = SPHelper.getSP(getApplicationContext(), currentAccount+"to"+k, with);
+        transactionSentOrReceived = SPHelper.getSP(getApplicationContext(), currentAccount+"transactionSentOrReceived"+k, transactionSentOrReceived);
+        amountInTransaction = SPHelper.getSP1(getApplicationContext(), currentAccount+"amount"+k, amountInTransaction);
     }
 
     @Override
