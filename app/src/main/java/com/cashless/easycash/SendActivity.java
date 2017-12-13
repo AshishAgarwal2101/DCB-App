@@ -94,7 +94,7 @@ public class SendActivity extends FragmentActivity {
                     String accinfo = receivers.get(j).getName()+" "+receivers.get(j).getVpa();
                     //Toast.makeText(SendActivity.this, accinfo, Toast.LENGTH_SHORT).show();
                     FragmentManager manager = getSupportFragmentManager();
-                    DialogPaymentFragment dialog = DialogPaymentFragment.newInstance(name1, vpa1, userid1);
+                    DialogPaymentFragment dialog = DialogPaymentFragment.newInstance(name1, vpa1, userid1,getIntent().getStringExtra("accno"));
                     dialog.show(manager, "DialogPayment");
                 }
             });

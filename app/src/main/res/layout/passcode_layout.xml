@@ -16,8 +16,8 @@
         android:textSize="30dp"
         android:layout_marginTop="35dp"
         android:id="@+id/passcode"
-        android:text="Enter the Passcode"
-        android:layout_marginLeft="65dp"
+        android:text="Enter the VPA Pin"
+        android:layout_marginLeft="60dp"
         android:textColor="#71c7a0"
         android:layout_marginBottom="30dp"
         />

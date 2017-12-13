@@ -1,5 +1,6 @@
 package com.cashless.easycash.Helpers;
 
+import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -19,12 +20,15 @@ import java.util.UUID;
 
 public class DbUpdateHelper {
 
-    private DatabaseReference myRef;
-    public String phone,bank,vpa,name,branch,ifsc,pin;
-    boolean flag;
-    ArrayList<String> accounts;
-    void fetchValues(final String accno)
+    static private DatabaseReference myRef;
+    public static String phone,bank,vpa,name,branch,ifsc,pin,accno,passcode;
+    static boolean flag;
+    static int k=0,currentAccount=0;
+    static Context c;
+    static ArrayList<String> accounts;
+    public static void fetchValues(final String accno)
     {
+        myRef =FirebaseDatabase.getInstance().getReference();
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -49,46 +53,58 @@ public class DbUpdateHelper {
         });
         }
 
-    String getPhone()
+    public String getPhone()
     {
         return phone;
     }
-    String getBank()
+    public  String getBank()
     {
         return bank;
     }
-    String getBranch()
+    public String getBranch()
     {
         return branch;
     }
-    String getPin()
+    public static String getPin()
     {
+        Log.e("pin",pin);
         return pin;
     }
-    String getVPA()
+    public  String getVPA()
     {
         return vpa;
     }
-    String getIFSC()
+    public  String getIFSC()
     {
         return ifsc;
     }
-    String getName()
+    public String getName()
     {
         return name;
     }
+    public String getAccno(){ return  accno;}
+    public String getPasscode(){return  passcode;}
 
 
-   public void setValues(String phone, String bank, String vpa, String name, String branch, String ifsc, String pin)
+   public static void setValues(Context context, String phone, String bank, String vpa, String name, String branch, String ifsc, String pin)
     {
+      /*  load();
+        k=getTotalAccounts();// k is used for saving new value in shared pref*/
         accounts= new ArrayList<>();
         find();
-
+        c=context;
         String acc_no;
         while(true) {
-            acc_no = "" + 1000000000 + (long) (Math.random() * 999999999);
+            acc_no = "" + (1000000000 + (long) (Math.random() * 999999999));
            if (findAcc(acc_no)) {
                Log.e("returned","yes");
+               accno=acc_no;
+               DbUpdateHelper.bank=bank;
+               DbUpdateHelper.vpa=vpa;
+               DbUpdateHelper.name=name;
+               DbUpdateHelper.branch=branch;
+               DbUpdateHelper.ifsc=ifsc;
+               DbUpdateHelper.pin=pin;
                 myRef = FirebaseDatabase.getInstance().getReference();
                 myRef.child("vpaValidation").child(acc_no).child("phone").setValue(phone);
                 myRef.child("vpaValidation").child(acc_no).child("bank").setValue(bank);
@@ -103,7 +119,7 @@ public class DbUpdateHelper {
        }
        Log.e("outside if","fdghrt");
     }
-    boolean findAcc(String acc)
+    static boolean findAcc(String acc)
     {
         for(String st: accounts)
         {
@@ -112,7 +128,7 @@ public class DbUpdateHelper {
         }
         return  true;
     }
-    void find() {
+    static void find() {
 
         //Log.e("findddddddddddddddddddd", acc_no);
         myRef = FirebaseDatabase.getInstance().getReference();
@@ -131,6 +147,37 @@ public class DbUpdateHelper {
             }
             });
 
+    }
+
+
+
+    public static void load() {
+        loadAccountBeingUsed();
+
+        phone = SPHelper.getSP(c,"phone"+currentAccount, "8888877777");
+        bank = SPHelper.getSP(c,"bankName"+currentAccount, "DCB");
+        vpa = SPHelper.getSP(c,"vpa"+currentAccount, "534534@ybl");
+        accno = SPHelper.getSP(c,"accno"+currentAccount,"31241441414");
+        name = SPHelper.getSP(c,"name"+currentAccount, "Ronit");
+        branch = SPHelper.getSP(c,"branch"+currentAccount,"Jayanagar");
+        ifsc = SPHelper.getSP(c,"ifsc"+currentAccount, "ubi00000127+");
+        pin = SPHelper.getSP(c,"vpapin"+currentAccount,"1234");
+        passcode = SPHelper.getSP(c,"apppin","2345");
+
+    }
+    public static void loadAccountBeingUsed(){
+        currentAccount = SPHelper.getSP1(c,"currentAccount",currentAccount);
+    }
+    public static void saveCurrentAccountBeingUsed(){
+        SPHelper.setSP1(c,"currentAccount",currentAccount);
+    }
+    public static void setTotalAccounts(int x)
+    {
+        SPHelper.setSP1(c,"totalaccounts",x);
+    }
+    public static int getTotalAccounts()
+    {
+        return SPHelper.getSP1(c,"totalaccounts",0);
     }
 
 }

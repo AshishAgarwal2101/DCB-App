@@ -14,15 +14,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class DialogPaymentFragment extends DialogFragment{
-    String name,vpa,userid;
+    String name,vpa,userid,accno;
     TextView nameDialog,vpaDialog;
     Button confirmButton;
     EditText amountDialog;
-    public static DialogPaymentFragment newInstance(String name, String vpa, String id){
+    public static DialogPaymentFragment newInstance(String name, String vpa, String id, String acc){
         Bundle args=new Bundle();
         args.putString("name",name);
         args.putString("vpa",vpa);
         args.putString("id", id);
+        args.putString("accno",acc);
         DialogPaymentFragment fragment=new DialogPaymentFragment();
         fragment.setArguments(args);
         return fragment;
@@ -34,6 +35,7 @@ public class DialogPaymentFragment extends DialogFragment{
         name = (String)getArguments().getString("name");
         vpa=(String)getArguments().getString("vpa");
         userid=(String)getArguments().get("id");
+       // accno=(String)getArguments().getString("accno");
 
         nameDialog = (TextView)v.findViewById(R.id.nameDialog);
         vpaDialog = (TextView)v.findViewById(R.id.vpaDialog);
@@ -51,6 +53,7 @@ public class DialogPaymentFragment extends DialogFragment{
                 intent.putExtra("reason", "sending");
                 intent.putExtra("id", userid);
                 intent.putExtra("amount", amount);
+                //intent.putExtra("accno",accno);
                 startActivity(intent);
             }
         });

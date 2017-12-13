@@ -81,7 +81,7 @@ ChoosePhoneActivity  extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 number= e.getText().toString();
-                if(!number.equals("") && permissionsGranted) {
+                if(!number.equals("") && permissionsGranted && number.matches("[0-9]+")) {
                     if(!((number.substring(0,3)).equals("+91")))
                         number = "+91" + number ;
                     if(number.length() != 13)
