@@ -8,7 +8,8 @@
     android:orientation="vertical"
     android:background="@drawable/waiting"
     android:textAlignment="center"
-    tools:context="com.cashless.easycash.ReceiveActivity">
+    tools:context="com.cashless.easycash.ReceiveActivity"
+    >
 
     <TextView
         android:layout_width="match_parent"

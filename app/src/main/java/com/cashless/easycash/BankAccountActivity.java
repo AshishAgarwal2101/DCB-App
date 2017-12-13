@@ -3,7 +3,7 @@ package com.cashless.easycash;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class BankAccount extends AppCompatActivity {
+public class BankAccountActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

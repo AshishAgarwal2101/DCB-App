@@ -46,6 +46,7 @@
     <string name="enter_the_passcode">Enter the Passcode</string>
     <string name="verify">Verify</string>
     <string name="proceed">PROCEED</string>
+    <string name="profile">PROFILE</string>
 
     <!--User defined-->
 

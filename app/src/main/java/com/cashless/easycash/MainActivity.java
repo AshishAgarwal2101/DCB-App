@@ -1,10 +1,14 @@
 package com.cashless.easycash;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.MenuInflater;
 import android.view.SubMenu;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -21,6 +25,7 @@ import android.widget.Toast;
 import com.cashless.easycash.Helpers.SPHelper;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -125,7 +130,7 @@ public class MainActivity extends AppCompatActivity
         bAddNewNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(intent);
+                startActivity(new Intent(MainActivity.this, BankAccountActivity.class));
             }
         });
     }
@@ -210,5 +215,50 @@ public class MainActivity extends AppCompatActivity
     }
     public void saveCurrentAccountBeingUsed(){
         SPHelper.setSP1(getApplicationContext(),"currentAccount",currentAccount);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_language, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch(item.getItemId()) {
+            case R.id.action_lang_en:
+                setLocale("en");
+                break;
+
+            case R.id.action_lang_hi:
+                setLocale("hi");
+                Toast.makeText(this, "Language changed to: Hindi", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.action_lang_kn:
+                setLocale("kn");
+                Toast.makeText(this, "Language changed to: Kannada", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.action_lang_mr:
+                setLocale("mr");
+                Toast.makeText(this, "Language changed to: Marathi", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void setLocale(String lang){
+        Locale myLocale = new Locale(lang);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.setLocale(myLocale);
+        res.updateConfiguration(conf, dm);
+        Intent refresh = new Intent(this, MainActivity.class);
+        startActivity(refresh);
+        finish();
     }
 }

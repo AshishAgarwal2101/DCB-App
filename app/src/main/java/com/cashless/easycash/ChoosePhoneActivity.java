@@ -296,7 +296,17 @@ ChoosePhoneActivity  extends AppCompatActivity{
 
             case R.id.action_lang_hi:
                 setLocale("hi");
-                Toast.makeText(this, "Hindi", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Language changed to: Hindi", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.action_lang_kn:
+                setLocale("kn");
+                Toast.makeText(this, "Language changed to: Kannada", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.action_lang_mr:
+                setLocale("mr");
+                Toast.makeText(this, "Language changed to: Marathi", Toast.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
