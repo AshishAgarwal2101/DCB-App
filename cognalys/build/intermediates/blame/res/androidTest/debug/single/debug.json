@@ -32,12 +32,12 @@
         "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\anim\\rotate.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_loading.png.flat",
-        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\loading.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_ic_launcher.png.flat",
         "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_loading.png.flat",
+        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\loading.png"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_ic_launcher.png.flat",
