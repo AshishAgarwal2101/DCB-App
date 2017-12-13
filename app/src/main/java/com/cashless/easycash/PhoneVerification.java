@@ -54,7 +54,9 @@ public class PhoneVerification extends AppCompatActivity {
 
             //Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
             //Toast.makeText(getApplicationContext(), "" + result,Toast.LENGTH_SHORT).show();
+
             Intent in= new Intent(PhoneVerification.this,ShowVerifiedActivity.class);
+            in.putExtra("phone",num);
             startActivity(in);
         }
     }

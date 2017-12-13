@@ -10,15 +10,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cashless.easycash.Beans.Bank;
+import com.cashless.easycash.Helpers.DbUpdateHelper;
 import com.cashless.easycash.Helpers.SPHelper;
 
 public class CreateVpaActivity extends AppCompatActivity {
-    private TextView tVpa;
+    private EditText tVpa;
     static int k=0,t=0,currentAccount=0;
-    String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Ronit",
+   public static String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Ronit",
             id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
-    Intent i1,i2;
-    Button b1,b2;
+    Intent i1;
+    Button b1;
     EditText username_edittext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +29,15 @@ public class CreateVpaActivity extends AppCompatActivity {
 
         loadAccountBeingUsed();
         k=currentAccount;
-
+        load();
+        phn= getIntent().getStringExtra("phone");
+        bankName=getIntent().getStringExtra("bank");
         i1=new Intent(this,MainActivity.class);
-        i2=new Intent(this,ChoosePhoneActivity.class);
         b1=(Button)findViewById(R.id.button2);
-        b2=(Button)findViewById(R.id.newVPA);
         username_edittext = (EditText)findViewById(R.id.username_edittext);
-        tVpa = (TextView) findViewById(R.id.vpa_field);
-        phn = SPHelper.getSP(getApplicationContext(),"phone"+k, phn);
-        String p= phn;
+        tVpa = (EditText) findViewById(R.id.vpa_field);
+        //phn = SPHelper.getSP(getApplicationContext(),"phone"+k, phn);
+        String p= phn.substring(3);
         tVpa.setText(p+"@ybl");
         phn=p;
         vpa=p+"@ybl";
@@ -44,23 +46,28 @@ public class CreateVpaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String name1 = username_edittext.getText().toString();
+                String num = tVpa.getText().toString();
                 if(name1 == ""){
                     Toast.makeText(CreateVpaActivity.this, "Please enter your Name", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     name = name1;
+                    vpa=num;
+                    addToDB();
                     save();
                     startActivity(i1);
                 }
             }
         });
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(i2);
-            }
-        });
+
         save();
+    }
+
+    void addToDB()
+    {
+        DbUpdateHelper db= new DbUpdateHelper();
+        Toast.makeText(this,bankName,Toast.LENGTH_SHORT).show();
+        db.setValues(phn,bankName,vpa,name,branch,ifsc,vpaPin);
     }
     public void save() {
         SPHelper.setSP(getApplicationContext(),"phone"+k, phn);
@@ -77,7 +84,7 @@ public class CreateVpaActivity extends AppCompatActivity {
 
     public void load() {
         phn = SPHelper.getSP(getApplicationContext(),"phone"+k, "8888877777");
-        bankName = SPHelper.getSP(getApplicationContext(),"bankName"+k, "DCB");
+        bankName = SPHelper.getSP(getApplicationContext(),"bankName"+k,"DCB");
         vpa = SPHelper.getSP(getApplicationContext(),"vpa"+k, "534534@ybl");
         accno = SPHelper.getSP(getApplicationContext(),"accno"+k,"31241441414");
         name = SPHelper.getSP(getApplicationContext(),"name"+k, "Ronit");
