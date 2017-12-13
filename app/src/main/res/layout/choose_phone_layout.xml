@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FEFCF0">
-
-
+    android:background="#FEFCF0"
+    android:layout_gravity="center">
 
     <TextView
         android:id="@+id/HelloText"
@@ -15,7 +13,7 @@
         android:textSize="30dp"
         android:layout_marginTop="50dp"
         android:textStyle="bold"
-        android:text="Hello User!\n Welcome to EasyCash"
+        android:text="@string/welcome_note"
         android:textColor="#71c702"/>
 
     <TextView
@@ -27,22 +25,23 @@
         android:layout_marginTop="50dp"
         android:textColor="#6f022f"
         android:textStyle="bold"
-        android:text="Enter the phone number:"
+        android:text="@string/enter_the_phone_number"
 
         />
 
     <EditText
         android:id="@+id/enterNumber"
-        android:layout_width="match_parent"
+        android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
-        android:hint="Enter your 10 digit number" />
+        android:gravity="center"
+        android:hint="@string/enter_your_10_digit_number" />
     <Button
         android:id="@+id/button"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:text="@string/next"
         android:layout_marginTop="30dp"
         android:background="#6AB344"
         android:textColor="#ffffff"

@@ -1,71 +1,15 @@
 [
     {
-        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_loading.png.flat",
-        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\loading.png"
-    },
-    {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_loading.png.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\loading.png"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim_rotate.xml.flat",
-        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\anim\\rotate.xml"
-    },
-    {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_ic_launcher.png.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_ic_launcher.png.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_ic_launcher.png.flat",
-        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu_main.xml.flat",
-        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\menu\\main.xml"
-    },
-    {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim_rotate.xml.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\anim\\rotate.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_loading.png.flat",
-        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\loading.png"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_ic_launcher.png.flat",
-        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_ic_launcher.png.flat",
-        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4_loading.png.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\loading.png"
-    },
-    {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu_verify_mobile.xml.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\menu\\verify_mobile.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_activity_main.xml.flat",
-        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_main.xml"
-    },
-    {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_ic_launcher.png.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_launcher.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldpi-v4_loading.png.flat",
         "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-ldpi-v4\\loading.png"
     },
     {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu_main.xml.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\menu\\main.xml"
+        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_loading.png.flat",
+        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\loading.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim_rotate.xml.flat",
+        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\anim\\rotate.xml"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_activity_verify_mobile.xml.flat",
@@ -76,39 +20,39 @@
         "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\loading.png"
     },
     {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_main.xml"
+        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_ic_launcher.png.flat",
+        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_loading.png.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\loading.png"
+        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu_main.xml.flat",
+        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_loading.png.flat",
+        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\loading.png"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_loading.png.flat",
         "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\loading.png"
     },
     {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_loading.png.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\loading.png"
+        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_ic_launcher.png.flat",
+        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_loading.png.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\loading.png"
+        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_ic_launcher.png.flat",
+        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_launcher.png"
     },
     {
         "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu_verify_mobile.xml.flat",
         "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\menu\\verify_mobile.xml"
     },
     {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_ic_launcher.png.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ic_launcher.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_ic_launcher.png.flat",
         "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_activity_verify_mobile.xml.flat",
-        "source": "C:\\Users\\Ashish\\AndroidStudioProjects\\DCB App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_verify_mobile.xml"
+        "merged": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_activity_main.xml.flat",
+        "source": "D:\\AndroidStudioProjects\\DCB-App\\cognalys\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_main.xml"
     }
 ]
