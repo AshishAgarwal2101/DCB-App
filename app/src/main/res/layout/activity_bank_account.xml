@@ -15,7 +15,7 @@
         android:background="#003380"
         android:layout_marginLeft="210dp"
         android:layout_marginTop="45dp"
-        android:text="DELETE ACCOUNT" />
+        android:text="@string/delete_account" />
     <TextView
         android:id="@+id/textView4"
         android:layout_width="100dp"

@@ -14,15 +14,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#000000"
-        android:textSize="17dp"
+        android:textSize="17sp"
         android:textAlignment="center"
         android:layout_marginTop="300dp"
-        android:text="Waiting For Sender..."/>
+        android:text="@string/waiting_for_sender"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
-        android:text="Done"
+        android:text="@string/button_done"
         android:id="@+id/receiver_done_button"
         android:textColor="#000000"
         android:background="@drawable/done_button"

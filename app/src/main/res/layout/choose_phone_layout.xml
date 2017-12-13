@@ -3,22 +3,22 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FEFCF0"
-    android:layout_gravity="center">
+    android:gravity="center">
 
     <TextView
         android:id="@+id/HelloText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textSize="30dp"
-        android:layout_marginTop="50dp"
+        android:textSize="30sp"
+        android:layout_marginTop="40dp"
         android:textStyle="bold"
         android:text="@string/welcome_note"
-        android:textColor="#71c702"/>
+        android:textColor="@color/lightGreen"/>
 
     <TextView
         android:id="@+id/enterNumberText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="25dp"
         android:layout_marginLeft="10dp"
@@ -31,11 +31,13 @@
 
     <EditText
         android:id="@+id/enterNumber"
-        android:layout_width="348dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
+        android:maxLength="10"
+        android:inputType="number"
         android:hint="@string/enter_your_10_digit_number" />
     <Button
         android:id="@+id/button"
