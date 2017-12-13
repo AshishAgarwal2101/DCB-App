@@ -28,6 +28,8 @@ public class SelectBankActivity extends AppCompatActivity{
     String sim;
     ArrayList<Bank> bankNames;
     public static Boolean selected = false;
+    public static String selectedBank;
+    String phone;
     private RecyclerView mBankView;
     private RecyclerView.LayoutManager mBankLayoutManager;
     private RecyclerView.Adapter mBankAdapter;
@@ -39,6 +41,7 @@ public class SelectBankActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_bank_layout);
         i= getIntent();
+        phone=i.getStringExtra("phone");
         if(i != null) {
             sim = i.getStringExtra("radio");
            // Toast.makeText(this,sim,Toast.LENGTH_SHORT).show();
@@ -70,6 +73,8 @@ public class SelectBankActivity extends AppCompatActivity{
             public void onClick(View v) {
                 if(selected) {
                     intent = new Intent(SelectBankActivity.this, CheckShowActivity.class);
+                    intent.putExtra("phone",phone);
+                    intent.putExtra("bank",selectedBank);
                     startActivity(intent);
                 }
                 else

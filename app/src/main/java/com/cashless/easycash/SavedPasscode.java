@@ -24,6 +24,8 @@ public class SavedPasscode extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_verified);
         i= new Intent(this,CreateVpaActivity.class);
+        i.putExtra("phone",getIntent().getStringExtra("phone"));
+        i.putExtra("bank",getIntent().getStringExtra("bank"));
         new LongOperation().execute("");
 
 
