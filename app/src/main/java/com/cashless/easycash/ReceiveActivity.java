@@ -21,14 +21,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.UUID;
 
 public class ReceiveActivity extends AppCompatActivity {
     private DatabaseReference myRef;
     public final String TAG = "abc";
     Button receiverDoneButton;
-    String userid;
+    String userid,transactionId,from,to;
     int amount,k=0,currentAccount=0;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Varsha",
             id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
@@ -76,8 +79,13 @@ public class ReceiveActivity extends AppCompatActivity {
                     }
                 }*/
                 try {
-                    userid = dataSnapshot.child("sending").child("id").getValue(String.class);
-                    amount = dataSnapshot.child("sending").child("amount").getValue(Integer.class);
+                    userid = dataSnapshot.child("sending").child(id).getKey();
+                    Toast.makeText(ReceiveActivity.this, userid,Toast.LENGTH_SHORT).show();
+                    amount = dataSnapshot.child("sending").child(userid).child("amount").getValue(Integer.class);
+                    transactionId=dataSnapshot.child("sending").child(userid).child("transactionId").getValue(String.class);
+                    from=dataSnapshot.child("sending").child(userid).child("from").getValue(String.class);
+                    to=name+"("+accno.substring(0,4)+"XXXXXXXX"+accno.substring(accno.length()-4, accno.length())+")";
+
                     //Toast.makeText(ReceiveActivity.this, userid + " " + amount, Toast.LENGTH_LONG).show();
                     if(userid.equals(id)){
                         //Toast.makeText(ReceiveActivity.this, "Notification", Toast.LENGTH_SHORT).show();
@@ -87,6 +95,18 @@ public class ReceiveActivity extends AppCompatActivity {
                         mBuilder.setContentText("Enjoy!!");
                         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                         mNotificationManager.notify(1, mBuilder.build());
+
+                        //setting transaction details in databse
+                        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                        Date date = new Date();
+                        String currentDate = dateFormat.format(date);
+                        myRef.child("transactions").child(transactionId).child("date").setValue(currentDate);
+                        myRef.child("transactions").child(transactionId).child("from").setValue(from);
+                        myRef.child("transactions").child(transactionId).child("to").setValue(to);
+                        myRef.child("transactions").child(transactionId).child("amount").setValue(amount);
+
+                        myRef.child("sending").child(userid).child("status").setValue("success");
+                        myRef.child("sending").child(userid).child("amountReceived").setValue(amount);
 
                         //Return to main screen after removing data from firebase
                         myRef.child("users").child(id).removeValue();

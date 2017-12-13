@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:textSize="25dp"
         android:textColor="#000000"
-        android:text="@string/transaction_processing"
+        android:text="Transaction Processing..."
         android:id="@+id/processingTextView"
         />
 
@@ -29,15 +29,8 @@
             android:background="#0000ff"
             android:textStyle="bold"
             android:layout_height="wrap_content"
-            android:text="@string/transaction_successsful"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:background="#0000ff"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:text="@string/your_transaction_id_is"/>
+            android:text="Transaction Successsful..\nYour Transaction id is:"/>
+
         <TextView
             android:layout_width="match_parent"
             android:textAlignment="center"
@@ -56,7 +49,7 @@
             android:textColor="#ffffff"
             android:padding="5dp"
             android:layout_height="wrap_content"
-            android:text="@string/home_screen"/>
+            android:text="HOME Screen"/>
         <pl.droidsonroids.gif.GifImageView
             android:layout_width="match_parent"
             android:layout_height="300dp"
