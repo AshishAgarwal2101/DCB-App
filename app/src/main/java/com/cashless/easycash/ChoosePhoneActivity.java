@@ -56,9 +56,11 @@ ChoosePhoneActivity  extends AppCompatActivity{
         callLogPermissionDialog();
         newNum= new Intent();
         newNum= getIntent();
+
         loadAccountBeingUsed();
         k=currentAccount;
         load();
+
         if(newNum.hasExtra("new"))
         {
 

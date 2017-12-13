@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="match_parent"
+    tools:context="com.cashless.easycash.BankAccount">
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:textColor="#ffffff"
+        android:background="#003380"
+        android:id="@+id/delete_account_button"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="45dp"
+        android:text="DELETE ACCOUNT" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Jayanagar"
+        android:textSize="10dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="80dp"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="ALH000143"
+        android:textSize="10dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="100dp"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="189dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="10dp"
+        android:text="Savings"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="120dp"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="209dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Branch        :"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IFSC             :"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="100dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type            :"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="120dp"/>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:text="1544XXXXXXXXXX7658"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="20dp"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="111dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="13dp"
+        android:text="Allahabad Bank"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="40dp"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="130dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        app:srcCompat="@drawable/allahabad_logo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="111dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="10dp"
+        android:textColor="#00cc00"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="175dp"
+        android:text="4 digit UPI PIN exists"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="330dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/tick"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:background="#ffffff"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="160dp"
+        android:text="CHANGE UPI PIN"
+        android:textSize="10dp"
+        android:textColor="#003380"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:background="#003380"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="270dp"
+        android:text="RESET UPI PIN"
+        android:textSize="10dp"
+        android:textColor="#ffffff"/>
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/dcb_bank_powered"
+        android:layout_marginTop="210dp"
+        android:layout_marginLeft="100dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#dddddd"
+        android:layout_marginTop="280dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAME SURNAME"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="140dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#dddddd"
+        android:layout_marginTop="340dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:background="#003380"
+        android:layout_marginTop="370dp"
+        android:layout_marginLeft="270dp"
+        android:text="ADD VPA"
+        android:textSize="10dp"
+        android:textColor="#ffffff"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+</FrameLayout>

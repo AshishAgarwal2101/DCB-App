@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity
 
     ImageView bSend, bReceive, bTransaction, bInvest, bFAQs, bAddNewNumber;
     Intent intent;
-    static int i=0,k=0,currentAccount,maxNumberOfAccounts=4;
+    static int k=0,currentAccount,maxNumberOfAccounts=4;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Ronit",
             id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
     ArrayList<String> accounts = new ArrayList<>();
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity
         bInvest = (ImageView) findViewById(R.id.icon_invest);
         bFAQs = (ImageView)findViewById(R.id.icon_faqs);
         bAddNewNumber=(ImageView)findViewById(R.id.icon_num);
-        intent= new Intent(this, ChoosePhoneActivity.class);
+        intent= new Intent(this, BankAccount.class);
         intent.putExtra("new","newNumber");
 
 
