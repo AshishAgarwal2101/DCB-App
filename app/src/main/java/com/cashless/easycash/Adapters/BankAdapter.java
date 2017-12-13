@@ -2,6 +2,7 @@ package com.cashless.easycash.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,10 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cashless.easycash.Beans.Bank;
+import com.cashless.easycash.CreateVpaActivity;
 import com.cashless.easycash.R;
 import com.cashless.easycash.SelectBankActivity;
 
@@ -48,8 +51,11 @@ public class BankAdapter extends RecyclerView.Adapter<BankAdapter.ViewHolder>{
         //holder.mBankName.setCompoundDrawablesWithIntrinsicBounds(currentBank.getResId(), 0, 0, 0);
         //holder.mBankRadio.setChecked(currentBank.getRadioButton());
         holder.mBankRadio.setChecked(position == lastCheckedPosition);
-        if(holder.mBankRadio.isChecked())
-        SelectBankActivity.selected = true;
+        if(holder.mBankRadio.isChecked()) {
+            SelectBankActivity.selected = true;
+            SelectBankActivity.selectedBank=currentBank.getName();
+            Log.e("bankbnbbbbbbbbb",SelectBankActivity.selectedBank);
+        }
     }
 
     @Override

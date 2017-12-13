@@ -25,6 +25,7 @@ public class ShowVerifiedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show_verified);
 
         i = new Intent(ShowVerifiedActivity.this, SelectBankActivity.class);
+        i.putExtra("phone",getIntent().getStringExtra("phone"));
         new LongOperation().execute("");
 
         imageView = (GifImageView) findViewById(R.id.show_check_gif);

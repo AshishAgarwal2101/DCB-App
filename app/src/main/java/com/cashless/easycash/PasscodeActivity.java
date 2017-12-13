@@ -28,6 +28,8 @@ public class PasscodeActivity extends AppCompatActivity {
         e=(EditText)findViewById(R.id.e1);
         pass=e.getText().toString();
         i= new Intent(PasscodeActivity.this,SavedPasscode.class);
+        i.putExtra("phone",getIntent().getStringExtra("phone"));
+        i.putExtra("bank",getIntent().getStringExtra("bank"));
         reason = getIntent().getExtras().getString("reason");
         userid = getIntent().getExtras().getString("id");
         amount = getIntent().getExtras().getInt("amount");

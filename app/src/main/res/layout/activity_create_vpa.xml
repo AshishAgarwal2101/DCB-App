@@ -35,7 +35,7 @@
             android:textStyle="bold"
             android:textColor="@color/colorRed"
             />
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/round_border"
@@ -78,14 +78,4 @@
         android:textSize="20dp"
         android:textStyle="bold"
         />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/newVPA"
-        android:background="@color/colorAccent"
-        android:textColor="@color/colorWhite"
-        android:layout_marginTop="340dp"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:text="+Create New VPA"/>
 </RelativeLayout>
