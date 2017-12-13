@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
+import com.cashless.easycash.Helpers.SPHelper;
+
 import java.io.IOException;
 
 import pl.droidsonroids.gif.GifDrawable;
@@ -24,8 +26,8 @@ public class SavedPasscode extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_verified);
         i= new Intent(this,CreateVpaActivity.class);
-        i.putExtra("phone",getIntent().getStringExtra("phone"));
-        i.putExtra("bank",getIntent().getStringExtra("bank"));
+        SPHelper.setSP(this, "phone",getIntent().getStringExtra("phone"));
+        SPHelper.setSP(this, "bank",getIntent().getStringExtra("bank"));
         new LongOperation().execute("");
 
 

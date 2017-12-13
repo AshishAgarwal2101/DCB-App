@@ -26,7 +26,8 @@ import pl.droidsonroids.gif.GifImageView;
  */
 
 public class CheckShowActivity extends AppCompatActivity {
-Intent in;
+
+    Intent in;
     private DatabaseReference myRef;
     String vpas,phone;
     static int k=0,currentAccount=0;

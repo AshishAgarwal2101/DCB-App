@@ -6,22 +6,55 @@
     android:background="#3333"
     android:layout_height="200dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_marginTop="30dp"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textAlignment="center"
-        android:text="Receiver's Name - Apoorva"
-        android:id="@+id/nameDialog"/>
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:layout_marginTop="10dp"
-        android:textAlignment="center"
-        android:id="@+id/vpaDialog"
-        android:text="Receiver's VPA - 595789@ybl"/>
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="50dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textAlignment="center"
+            android:text="@string/receiver_s_name"
+            android:id="@+id/nameDataDialog" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="Name"
+            android:layout_toEndOf="@id/nameDataDialog"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:id="@+id/nameDialog" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="50dp"
+            android:id="@+id/vpaDataDialog"
+            android:text="@string/receiver_s_vpa"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:layout_marginTop="10dp"
+            android:id="@+id/vpaDialog"
+            android:paddingStart="15dp"
+            android:paddingEnd="10dp"
+            android:layout_toEndOf="@id/vpaDataDialog"
+            android:text="595789@ybl"/>
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
@@ -30,14 +63,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
-            android:text="Enter Amount"
-            android:layout_marginLeft="50dp"/>
+            android:text="@string/enter_amount"
+            android:layout_marginStart="50dp"/>
         <EditText
-            android:layout_width="130dp"
+            android:layout_width="150dp"
             android:inputType="number"
             android:layout_height="40dp"
             android:background="@drawable/amount_dialog_text"
-            android:id="@+id/amountDialog" />
+            android:id="@+id/amountDialog"
+            android:layout_marginStart="20dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -45,12 +79,12 @@
         android:layout_height="wrap_content">
         <Button
             android:layout_width="120dp"
-            android:text="Confirm"
+            android:text="@string/confirm"
             android:id="@+id/confirm_button"
             android:textColor="#ffffff"
             android:background="@color/colorRed"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="110dp"
+            android:layout_marginStart="110dp"
             android:layout_marginBottom="30dp"
             android:layout_height="wrap_content" />
     </LinearLayout>

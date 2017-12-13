@@ -9,6 +9,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,6 +19,10 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,6 +34,7 @@ import android.widget.Toast;
 import com.cashless.easycash.Helpers.SPHelper;
 
 import java.security.Permission;
+import java.util.Locale;
 
 /**
  * Created by Ashish on 11/4/2017.
@@ -267,7 +274,53 @@ ChoosePhoneActivity  extends AppCompatActivity{
         appPin = SPHelper.getSP(getApplicationContext(),"apppin"+k,"2345");
         //++k;
     }
+
     public void loadAccountBeingUsed(){
         currentAccount = SPHelper.getSP1(getApplicationContext(),"currentAccount",currentAccount);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_language, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch(item.getItemId()) {
+            case R.id.action_lang_en:
+                setLocale("en");
+                break;
+
+            case R.id.action_lang_hi:
+                setLocale("hi");
+                Toast.makeText(this, "Language changed to: Hindi", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.action_lang_kn:
+                setLocale("kn");
+                Toast.makeText(this, "Language changed to: Kannada", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.action_lang_mr:
+                setLocale("mr");
+                Toast.makeText(this, "Language changed to: Marathi", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void setLocale(String lang){
+        Locale myLocale = new Locale(lang);
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.setLocale(myLocale);
+        res.updateConfiguration(conf, dm);
+        Intent refresh = new Intent(this, ChoosePhoneActivity.class);
+        startActivity(refresh);
+        finish();
     }
 }

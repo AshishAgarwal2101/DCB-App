@@ -1,20 +1,4 @@
 <resources>
-    <string name="app_name">Easy Cash</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <string name="drawer_open" translatable="false">open drawer</string>
-    <string name="drawer_close" translatable="false">close drawer</string>
-    <string name="action_websearch" translatable="false">action websearch</string>
-    <string name="title_activity_main2" translatable="false">Main2Activity</string>
-
-    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
-    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-
-    <string name="action_settings" translatable="false">Settings</string>
-    <string name="title_activity_main" translatable="false">MainActivity</string>
-
-    <!--User defined-->
     <string name="welcome_note">Hello User!  Welcome to EasyCash</string>
     <string name="enter_the_phone_number">Enter the phone number:</string>
     <string name="enter_your_10_digit_number">Enter your 10 digit number</string>
@@ -41,13 +25,10 @@
     <string name="enter_amount">Enter Amount:</string>
     <string name="confirm">Confirm</string>
     <string name="receiver_s_vpa">Receiver\'s VPA:</string>
-    <string name="receiver_s_name">Receiver\'s name:</string>
+    <string name="receiver_s_name">Receiver\'s Name:</string>
     <string name="accounts">Accounts</string>
     <string name="enter_the_passcode">Enter the Passcode</string>
     <string name="verify">Verify</string>
     <string name="proceed">PROCEED</string>
     <string name="profile">PROFILE</string>
-
-    <!--User defined-->
-
 </resources>

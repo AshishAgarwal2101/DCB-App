@@ -37,8 +37,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:theme,android:icon">
-        <activity android:name=".ChoosePhoneActivity">
+        tools:replace="android:theme,android:icon"
+        >
+        <activity android:name=".ChoosePhoneActivity" android:configChanges="locale|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -73,7 +74,7 @@
         <activity android:name=".InvestActivity" />
         <activity android:name=".FAQs" />
         <activity android:name=".Transactions" />
-        <activity android:name=".BankAccount"></activity>
+        <activity android:name=".BankAccount" />
     </application>
 
 </manifest>

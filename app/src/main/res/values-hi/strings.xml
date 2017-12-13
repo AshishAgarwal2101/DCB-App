@@ -1,0 +1,36 @@
+<resources>
+
+    <string name="welcome_note">स्वागत है!</string>
+    <string name="app_name">ईज़ी कैश</string>
+    <string name="enter_your_10_digit_number">अपना 10 अंक नंबर दर्ज करें:</string>
+    <string name="your_name">आपका नाम:</string>
+    <string name="suggestions">सुझाव:</string>
+    <string name="delete_account">अपना खाता हटाएं</string>
+    <string name="waiting_for_sender">प्रेषक के लिए प्रतीक्षा कर रहा है</string>
+    <string name="button_done">पूर्ण</string>
+    <string name="select_your_bank">अपना बैंक चुनें</string>
+    <string name="ok">ठीक</string>
+    <string name="your_vpa">आपका वीपीए:</string>
+    <string name="next">अगला</string>
+    <string name="enter_the_phone_number">फोन नंबर दर्ज करें:</string>
+    <string name="transaction_processing">आदान-प्रदान जारी है...</string>
+    <string name="transaction_successsful">आदान-प्रदान सफल!</string>
+    <string name="your_transaction_id_is">आपका लेनदेन आईडी है:</string>
+    <string name="home_screen">होम स्क्रीन</string>
+    <string name="send">भेजें</string>
+    <string name="transactions">लेनदेन इतिहास</string>
+    <string name="invest">धेरना</string>
+    <string name="faqs">सामान्य प्रश्न</string>
+    <string name="enter_amount">राशी दर्ज करें</string>
+    <string name="confirm">पुष्टि करें</string>
+    <string name="verified_successfully">सफल!</string>
+    <string name="add_new_number">नया नंबर जोड़ें</string>
+    <string name="receive">स्वीकार  करें</string>
+    <string name="verify">" जांच  करें"</string>
+    <string name="enter_the_passcode">पासकोड दर्ज करें</string>
+    <string name="receiver_s_vpa">प्राप्तकर्ता का वीपीए:</string>
+    <string name="receiver_s_name">प्राप्तकर्ता नाम:</string>
+    <string name="accounts">खातें</string>
+    <string name="proceed">अगला</string>
+    <string name="profile">" पार्श्वचित्र"</string>
+</resources>
