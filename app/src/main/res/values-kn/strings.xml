@@ -1,0 +1,36 @@
+<resources>
+
+    <string name="welcome_note">ನಿಮಗೆ ಸ್ವಾಗತ</string>
+    <string name="next">ಮುಂದುವರಿಸಿ</string>
+    <string name="ok">ಸರಿ</string>
+    <string name="button_done">ಮುಗಿದಿದೆ</string>
+    <string name="verified_successfully">ಯಶಸ್ವಿಯಾಗಿ  ಪರಿಶೀಲಿಸಲಾಗಿದೆ!</string>
+    <string name="your_transaction_id_is">ನಿಮ್ಮ ವ್ಯವಹಾರ ಐಡಿ:</string>
+    <string name="receive">ಸ್ವೀಕರಿಸಿ</string>
+    <string name="transactions">ಅನುವಾದಗಳು</string>
+    <string name="invest">ಹೂಡಿಕೆ ಮಾಡಿ</string>
+    <string name="faqs">ಮತ್ತೆ ಮತ್ತೆ ಕೇಳಿರುವ ಪ್ರಶ್ನೆಗಳು</string>
+    <string name="add_new_number">ಹೊಸ ಸಂಖ್ಯೆಯನ್ನು ದಾಖಲಿಸಿ</string>
+    <string name="enter_amount">ಪ್ರಮಾಣವನ್ನು ನಮೂದಿಸಿ:</string>
+    <string name="confirm">ಧ್ವಢೀಕರಿಸಿ</string>
+    <string name="receiver_s_vpa">ಸ್ವೀಕರಿಸುವವರ ವೀಪೀಯೇ:</string>
+    <string name="receiver_s_name">ಸ್ವೀಕರಿಸುವವರ ಹೆಸರು:</string>
+    <string name="accounts">ಖಾತೆಗಳು</string>
+    <string name="enter_the_passcode">ಪಾಸ್ಕೋಡ್ ನಮೂದಿಸಿ</string>
+    <string name="verify">ಪರಿಶೀಲನೆ</string>
+    <string name="app_name">ಈಸೀ ಕ್ಯಾಶ್</string>
+    <string name="enter_your_10_digit_number">ನಿಮ್ಮ 10 ಅಂಕಿಯ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="your_name">ನಿಮ್ಮ ಹೆಸರು:</string>
+    <string name="suggestions">ಸಲಹೆಗಳು:</string>
+    <string name="delete_account">ಖಾತೆಯನ್ನು ಅಳಿಸಿ</string>
+    <string name="waiting_for_sender">ಕಳುಹಿಸುವವರಿಗಾಗಿ ಕಾಯುತ್ತಿದ್ದೇವೆ</string>
+    <string name="proceed">ಮುಂದುವರಿಸಿ</string>
+    <string name="select_your_bank">ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಅನ್ನು ಆಯ್ಕೆ ಮಾಡಿ</string>
+    <string name="your_vpa">ನಿಮ್ಮ ವೀಪೀಯೇ:</string>
+    <string name="enter_the_phone_number">ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ:</string>
+    <string name="transaction_processing">"ವ್ಯವಹಾರ ಪ್ರಕ್ರಿಯೆ. . . "</string>
+    <string name="transaction_successsful">ವಹಿವಾಟು ಯಶಸ್ವಿಯಾಗಿದೆ</string>
+    <string name="home_screen">ಹೋಮ್ ಸ್ಕ್ರೀನ್</string>
+    <string name="send">ಕಳಿಸಿ</string>
+    <string name="profile">ಸಂಕ್ಷಿಪ್ತ ವ್ಯಕ್ತಿಚಿತ್ರ</string>
+</resources>

@@ -1,5 +1,6 @@
 package com.cashless.easycash;
 
+import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -7,17 +8,23 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.cashless.easycash.Helpers.SPHelper;
 
 import java.util.ArrayList;
 
-public class BankAccount extends FragmentActivity {
+/**
+ * Created by Varsha on 13-12-2017.
+ */
+
+public class BankAccount extends AppCompatActivity{
     Button deleteAccount;
     static int k=0,currentAccount=0;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Ronit",
             id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
     ArrayList<String> accounts = new ArrayList<>();
+    TextView mBankName, mUsername, mAccno, mIfsc, mBankBranch, mVpa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +58,20 @@ public class BankAccount extends FragmentActivity {
                 dialog.show(manager, "DialogFragment1");
             }
         });
+
+        mBankName = (TextView)findViewById(R.id.bank_name);
+        mAccno = (TextView)findViewById(R.id.account_no);
+        mBankBranch = (TextView)findViewById(R.id.bank_branch);
+        mIfsc = (TextView)findViewById(R.id.bank_ifsc);
+        mUsername = (TextView)findViewById(R.id.user_name);
+        mVpa = (TextView)findViewById(R.id.bank_vpas);
+
+        mBankName.setText(bankName);
+        mAccno.setText(accno);
+        mBankBranch.setText(branch);
+        mIfsc.setText(ifsc);
+        mUsername.setText(name);
+        mVpa.setText(vpa);
     }
 
     public void save() {
@@ -84,4 +105,5 @@ public class BankAccount extends FragmentActivity {
     public void saveCurrentAccountBeingUsed(){
         SPHelper.setSP1(getApplicationContext(),"currentAccount",currentAccount);
     }
+
 }

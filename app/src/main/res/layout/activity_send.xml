@@ -19,7 +19,7 @@
         <Button
             android:layout_width="100dp"
             android:textSize="8dp"
-            android:text="apoorva"
+            android:text="Username"
             android:layout_height="100dp"
             android:id="@+id/receiverIcon5"
             android:textColor="#582c4f"
@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ashish"
+            android:text="Name"
             android:textColor="#ffffff"
             android:layout_marginLeft="20dp"
             android:id="@+id/receiverTextView5"/>
@@ -47,7 +47,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ashish"
+            android:text="Name"
             android:textColor="#ffffff"
             android:layout_marginLeft="20dp"
             android:id="@+id/receiverTextView7"/>
@@ -68,7 +68,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ashish"
+            android:text="Name"
             android:textColor="#ffffff"
             android:layout_marginLeft="20dp"
             android:id="@+id/receiverTextView4"/>
@@ -94,7 +94,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ashish"
+                android:text="Name"
                 android:textColor="#ffffff"
                 android:layout_marginLeft="20dp"
                 android:id="@+id/receiverTextView6"/>
@@ -114,7 +114,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ashish"
+                android:text="Name"
                 android:textColor="#ffffff"
                 android:layout_marginLeft="20dp"
                 android:id="@+id/receiverTextView8"/>
@@ -129,14 +129,14 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:textColor="#582c4f"
-                android:text="Ashish"
+                android:text="Name"
                 android:textSize="8dp"
                 android:id="@+id/receiverIcon1"
                 android:background="@drawable/receiver_icon"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ashish"
+                android:text="Name"
                 android:textColor="#ffffff"
                 android:layout_marginLeft="20dp"
                 android:id="@+id/receiverTextView1"/>
@@ -162,7 +162,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ashish"
+                android:text="Name"
                 android:textColor="#ffffff"
                 android:layout_marginLeft="20dp"
                 android:id="@+id/receiverTextView3"/>
@@ -182,7 +182,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ashish"
+                android:text="Name"
                 android:textColor="#ffffff"
                 android:layout_marginLeft="20dp"
                 android:id="@+id/receiverTextView9"/>
@@ -203,7 +203,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ashish"
+                android:text="Name"
                 android:textColor="#ffffff"
                 android:layout_marginLeft="20dp"
                 android:id="@+id/receiverTextView2"/>

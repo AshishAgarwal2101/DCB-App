@@ -13,19 +13,20 @@
     <TextView
         android:layout_width="277dp"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_marginTop="35dp"
         android:id="@+id/passcode"
-        android:text="Enter the VPA Pin"
-        android:layout_marginLeft="60dp"
+        android:text="@string/enter_the_passcode"
+        android:layout_marginStart="65dp"
         android:textColor="#71c7a0"
         android:layout_marginBottom="30dp"
+        android:labelFor="@id/e1"
         />
 
     <EditText
         android:id="@+id/e1"
         android:layout_width="150dp"
-        android:textSize="55dp"
+        android:textSize="55sp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_gravity="center"
@@ -33,7 +34,7 @@
         android:inputType="numberPassword" />
     <Button
         android:id="@+id/passButton"
-        android:text="Verify"
+        android:text="@string/verify"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
@@ -41,6 +42,6 @@
         android:background="#6AB344"
         android:textColor="#ffffff"
         android:textStyle="bold"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
 </LinearLayout>

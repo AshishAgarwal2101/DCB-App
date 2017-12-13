@@ -8,10 +8,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select Your Bank"
+        android:text="@string/select_your_bank"
         android:textColor="@color/colorBlack"
         android:textStyle="bold"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:id="@+id/your_bank"
         />
 
@@ -19,7 +19,7 @@
         android:id="@+id/proceed_after_bank"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="PROCEED"
+        android:text="@string/proceed"
         android:textColor="@color/colorWhite"
         android:textStyle="bold"
         android:textSize="15sp"
