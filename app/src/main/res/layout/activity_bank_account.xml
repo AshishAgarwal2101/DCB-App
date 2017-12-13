@@ -18,17 +18,18 @@
         android:layout_marginTop="45dp"
         android:text="@string/delete_account" />
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/bank_branch"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
         android:text="Jayanagar"
         android:textSize="10dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="80dp"
+        />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/bank_ifsc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
@@ -70,7 +71,7 @@
         android:layout_marginTop="120dp"/>
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/account_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
@@ -83,7 +84,7 @@
         tools:layout_editor_absoluteY="111dp" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/bank_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
@@ -95,7 +96,7 @@
         tools:layout_editor_absoluteY="130dp" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/bank_logo"
         android:layout_width="43dp"
         android:layout_height="43dp"
         app:srcCompat="@drawable/allahabad_logo"
@@ -153,7 +154,8 @@
         android:text="NAME SURNAME"
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="300dp"
-        android:layout_marginLeft="140dp"/>
+        android:layout_marginLeft="140dp"
+        android:id="@+id/user_name"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="2dp"
@@ -168,11 +170,14 @@
         android:text="ADD VPA"
         android:textSize="10dp"
         android:textColor="#ffffff"/>
-    <android.support.v7.widget.RecyclerView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp">
-
-    </android.support.v7.widget.RecyclerView>
+        android:text="Display VPAs"
+        android:id="@+id/bank_vpas"
+        android:layout_marginTop="400dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/colorBlack"
+        />
 
 </FrameLayout>

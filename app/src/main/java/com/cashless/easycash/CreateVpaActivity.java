@@ -38,8 +38,8 @@ public class CreateVpaActivity extends AppCompatActivity {
         loadAccountBeingUsed();
         k=currentAccount;
         load();
-        phn= getIntent().getStringExtra("phone");
-        bankName=getIntent().getStringExtra("bank");
+        phn= SPHelper.getSP(this,"phone","sample data");
+        bankName=SPHelper.getSP(this,"bank","sample data");
         i1=new Intent(this,MainActivity.class);
         b1=(Button)findViewById(R.id.button2);
         username_edittext = (EditText)findViewById(R.id.username_edittext);

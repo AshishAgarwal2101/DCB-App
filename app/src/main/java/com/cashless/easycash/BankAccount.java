@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.cashless.easycash.Helpers.SPHelper;
 
@@ -23,6 +24,7 @@ public class BankAccount extends AppCompatActivity{
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Ronit",
             id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
     ArrayList<String> accounts = new ArrayList<>();
+    TextView mBankName, mUsername, mAccno, mIfsc, mBankBranch, mVpa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +49,7 @@ public class BankAccount extends AppCompatActivity{
             }
         }
 
-        deleteAccount = (Button)findViewById(R.id.delete_accoun);
+        deleteAccount = (Button)findViewById(R.id.delete_account_button);
         deleteAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +58,20 @@ public class BankAccount extends AppCompatActivity{
                 dialog.show(manager, "DialogFragment1");
             }
         });
+
+        mBankName = (TextView)findViewById(R.id.bank_name);
+        mAccno = (TextView)findViewById(R.id.account_no);
+        mBankBranch = (TextView)findViewById(R.id.bank_branch);
+        mIfsc = (TextView)findViewById(R.id.bank_ifsc);
+        mUsername = (TextView)findViewById(R.id.user_name);
+        mVpa = (TextView)findViewById(R.id.bank_vpas);
+
+        mBankName.setText(bankName);
+        mAccno.setText(accno);
+        mBankBranch.setText(branch);
+        mIfsc.setText(ifsc);
+        mUsername.setText(name);
+        mVpa.setText(vpa);
     }
 
     public void save() {
