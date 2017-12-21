@@ -1,14 +1,19 @@
 package com.cashless.easycash;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cashless.easycash.Helpers.SPHelper;
 
@@ -22,9 +27,9 @@ public class BankAccount extends AppCompatActivity{
     Button deleteAccount;
     static int k=0,currentAccount=0;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Ronit",
-            id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
+            id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345", vpa2="Not defined!", myvpadata;
     ArrayList<String> accounts = new ArrayList<>();
-    TextView mBankName, mUsername, mAccno, mIfsc, mBankBranch, mVpa;
+    TextView mBankName, mUsername, mAccno, mIfsc, mBankBranch, mVpa1, mVpa2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,14 +69,32 @@ public class BankAccount extends AppCompatActivity{
         mBankBranch = (TextView)findViewById(R.id.bank_branch);
         mIfsc = (TextView)findViewById(R.id.bank_ifsc);
         mUsername = (TextView)findViewById(R.id.user_name);
-        mVpa = (TextView)findViewById(R.id.bank_vpas);
+        mVpa1 = (TextView)findViewById(R.id.bank_vpa_1);
+        mVpa2 = (TextView)findViewById(R.id.bank_vpa_2);
 
         mBankName.setText(bankName);
         mAccno.setText(accno);
         mBankBranch.setText(branch);
         mIfsc.setText(ifsc);
         mUsername.setText(name);
-        mVpa.setText(vpa);
+        mVpa1.setText(vpa);
+        mVpa2.setText(vpa2);
+
+        mVpa1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myvpadata = showChangeLangDialog();
+                mVpa1.setText(myvpadata);
+            }
+        });
+
+        mVpa2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myvpadata = showChangeLangDialog();
+                mVpa2.setText(myvpadata);
+            }
+        });
     }
 
     public void save() {
@@ -106,4 +129,30 @@ public class BankAccount extends AppCompatActivity{
         SPHelper.setSP1(getApplicationContext(),"currentAccount",currentAccount);
     }
 
+    public String showChangeLangDialog() {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.custom_dialog_account, null);
+        dialogBuilder.setView(dialogView);
+
+        final EditText editText = (EditText) dialogView.findViewById(R.id.vpa_name);
+
+        dialogBuilder.setTitle("Enter desired VPA");
+        dialogBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                //do something with editText.getText().toString();
+            }
+        });
+        dialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                //pass
+
+            }
+        });
+        AlertDialog b = dialogBuilder.create();
+        b.show();
+
+        return editText.getText().toString();
+
+    }
 }

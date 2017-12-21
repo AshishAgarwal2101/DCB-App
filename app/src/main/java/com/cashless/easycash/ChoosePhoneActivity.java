@@ -31,6 +31,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cashless.easycash.Helpers.InternetHelper;
 import com.cashless.easycash.Helpers.SPHelper;
 
 import java.security.Permission;
@@ -94,9 +95,13 @@ ChoosePhoneActivity  extends AppCompatActivity{
                     if(number.length() != 13)
                         Toast.makeText(getApplicationContext(),"Enter the correct number",Toast.LENGTH_SHORT).show();
                     else {
-                        Toast.makeText(getApplicationContext(), number, Toast.LENGTH_SHORT).show();
-                        i.putExtra("number", number);
-                        startActivity(i);
+                        if(InternetHelper.isNetworkAvailable(getApplicationContext())) {
+                            Toast.makeText(getApplicationContext(), number, Toast.LENGTH_SHORT).show();
+                            i.putExtra("number", number);
+                            startActivity(i);
+                        } else {
+                            Toast.makeText(ChoosePhoneActivity.this, "Turn on Internet.", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
                 else if(!permissionsGranted)
