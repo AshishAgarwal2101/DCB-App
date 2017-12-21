@@ -21,4 +21,10 @@
         </RelativeLayout>
     </ScrollView>
 
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </ExpandableListView>
+
 </LinearLayout>
