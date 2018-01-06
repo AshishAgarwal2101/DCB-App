@@ -166,18 +166,33 @@
         android:layout_height="25dp"
         android:background="#003380"
         android:layout_marginTop="370dp"
-        android:layout_marginLeft="270dp"
-        android:text="ADD VPA"
-        android:textSize="10dp"
+        android:layout_marginStart="240dp"
+        android:text="Change Primary VPA"
+        android:textSize="12sp"
+        android:padding="3dp"
         android:textColor="#ffffff"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Display VPAs"
-        android:id="@+id/bank_vpas"
+        android:text="Display VPA 1"
+        android:id="@+id/bank_vpa_1"
         android:layout_marginTop="400dp"
         android:layout_marginStart="10dp"
         android:textColor="@color/colorBlack"
+        android:drawableEnd="@drawable/ic_edit_black_24dp"
+        android:padding="5dp"
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Display VPA 2"
+        android:id="@+id/bank_vpa_2"
+        android:layout_marginTop="430dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/colorBlack"
+        android:drawableEnd="@drawable/ic_edit_black_24dp"
+        android:padding="5dp"
+        />
+
 
 </FrameLayout>

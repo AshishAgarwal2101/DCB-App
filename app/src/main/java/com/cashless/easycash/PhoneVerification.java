@@ -3,13 +3,17 @@ package com.cashless.easycash;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
+
+import com.cashless.easycash.Helpers.SPHelper;
 import com.matesnetwork.Cognalys.VerifyMobile;
 import java.util.ArrayList;
 
 public class PhoneVerification extends AppCompatActivity {
 
     String sim,s1="Jio 4G",s2="Airtel",num1="+917355785212",num2="+918971435313",num="";
+    int currentAccount=0,k=0;
     Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +21,7 @@ public class PhoneVerification extends AppCompatActivity {
         setContentView(R.layout.activity_phone_verification);
         i= getIntent();
         num= i.getStringExtra("number");
+        k=getTotalAccounts();
         //Toast.makeText(this,sim,Toast.LENGTH_SHORT).show();
 
       /*  if(sim.equals(s1))
@@ -56,9 +61,27 @@ public class PhoneVerification extends AppCompatActivity {
             //Toast.makeText(getApplicationContext(), "" + result,Toast.LENGTH_SHORT).show();
 
             Intent in= new Intent(PhoneVerification.this,ShowVerifiedActivity.class);
-            in.putExtra("phone",num);
+
+            save();//here only phone number just entered gets saved, nothing else
             startActivity(in);
         }
+    }
+   public void save()
+   {
+       k=getTotalAccounts();
+       SPHelper.setSP(this,"phone"+k,num);//don't increment k or total accounts now
+       Log.e("phone+k",num+" "+k);
+   }
+    public  void loadAccountBeingUsed(){
+        currentAccount = SPHelper.getSP1(this,"currentAccount",currentAccount);
+    }
+    public  void setTotalAccounts(int x)
+    {
+        SPHelper.setSP1(this,"totalaccounts",x);
+    }
+    public  int getTotalAccounts()
+    {
+        return SPHelper.getSP1(this,"totalaccounts",0);
     }
 
 }

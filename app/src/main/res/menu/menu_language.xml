@@ -26,4 +26,10 @@
         </menu>
     </item>
 
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="Themes"
+        app:showAsAction="never" >
+    </item>
 </menu>

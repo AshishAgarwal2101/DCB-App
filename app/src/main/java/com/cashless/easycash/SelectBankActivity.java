@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 
 import com.cashless.easycash.Adapters.BankAdapter;
 import com.cashless.easycash.Beans.Bank;
+import com.cashless.easycash.Helpers.SPHelper;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,8 +37,9 @@ public class SelectBankActivity extends AppCompatActivity{
     String sim;
     ArrayList<Bank> bankNames;
     public static Boolean selected = false;
-    public static String selectedBank;
+    public static String selectedBank, selectedBankIFSC="DCB0987",selectedBankBranch="Lal Bangla";
     String phone;
+    int currentAccount=0,k=0;
     private RecyclerView mBankView;
     private RecyclerView.LayoutManager mBankLayoutManager;
     private RecyclerView.Adapter mBankAdapter;
@@ -48,7 +51,6 @@ public class SelectBankActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_bank_layout);
         i= getIntent();
-        phone=i.getStringExtra("phone");
         if(i != null) {
             sim = i.getStringExtra("radio");
            // Toast.makeText(this,sim,Toast.LENGTH_SHORT).show();
@@ -80,8 +82,7 @@ public class SelectBankActivity extends AppCompatActivity{
             public void onClick(View v) {
                 if(selected) {
                     intent = new Intent(SelectBankActivity.this, CheckShowActivity.class);
-                    intent.putExtra("phone",phone);
-                    intent.putExtra("bank",selectedBank);
+                    save();//saving bank name
                     startActivity(intent);
                 }
                 else
@@ -90,6 +91,27 @@ public class SelectBankActivity extends AppCompatActivity{
                 }
             }
         });
+
+
+    }
+    public void save()
+    {
+        k=getTotalAccounts();
+        SPHelper.setSP(this,"bankName"+k,selectedBank);
+        SPHelper.setSP(this,"ifsc"+k,selectedBankIFSC);
+        SPHelper.setSP(this,"branch"+k,selectedBankBranch);//don't increment k or total accounts now
+        Log.e("selectedbank+k",selectedBank+" "+k);
+    }
+    public  void loadAccountBeingUsed(){
+        currentAccount = SPHelper.getSP1(this,"currentAccount",currentAccount);
+    }
+    public  void setTotalAccounts(int x)
+    {
+        SPHelper.setSP1(this,"totalaccounts",x);
+    }
+    public  int getTotalAccounts()
+    {
+        return SPHelper.getSP1(this,"totalaccounts",0);
     }
 
     @Override

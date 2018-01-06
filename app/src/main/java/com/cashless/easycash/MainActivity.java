@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.cashless.easycash.Helpers.SPHelper;
+import com.google.firebase.database.Transaction;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     ImageView bSend, bReceive, bTransaction, bInvest, bFAQs, bAddNewNumber;
-    Intent intent;
+    Intent intent,i1,i2,i3,i4,i5,i6;
     static int k=0,currentAccount,maxNumberOfAccounts=4;
     String phn="8888877777",bankName="DCB",vpa="534534@ybl",accno="31241441414",name="Ronit",
             id,branch="Jayanagar",ifsc="ubi00000127",vpaPin="1234",appPin="2345";
@@ -94,37 +95,48 @@ public class MainActivity extends AppCompatActivity
         bFAQs = (ImageView)findViewById(R.id.icon_faqs);
         bAddNewNumber=(ImageView)findViewById(R.id.icon_num);
         intent= new Intent(this, BankAccount.class);
+        //intent.putExtra("accno",getIntent().getStringExtra("accno"));
         intent.putExtra("new","newNumber");
 
 
         bSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SendActivity.class));
+                i1=new Intent(MainActivity.this, SendActivity.class);
+               // i1.putExtra("accno",getIntent().getStringExtra("accno"));
+                startActivity(i1);
             }
         });
         bReceive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ReceiveActivity.class));
+                i2=new Intent(MainActivity.this, ReceiveActivity.class);
+               // i2.putExtra("accno",getIntent().getStringExtra("accno"));
+                startActivity(i2);
             }
         });
         bTransaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Transactions.class));
+                i3=new Intent(MainActivity.this, Transactions.class);
+                //i3.putExtra("accno",getIntent().getStringExtra("accno"));
+                startActivity(i3);
             }
         });
         bInvest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, InvestActivity.class));
+                i4=new Intent(MainActivity.this, InvestActivity.class);
+              //  i4.putExtra("accno",getIntent().getStringExtra("accno"));
+                startActivity(i4);
             }
         });
         bFAQs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, FAQs.class));
+                i5=new Intent(MainActivity.this, FAQs.class);
+              //  i5.putExtra("accno",getIntent().getStringExtra("accno"));
+                startActivity(i5);
             }
         });
         bAddNewNumber.setOnClickListener(new View.OnClickListener() {
@@ -194,7 +206,7 @@ public class MainActivity extends AppCompatActivity
         SPHelper.setSP(getApplicationContext(),"branch"+k,branch);
         SPHelper.setSP(getApplicationContext(),"ifsc"+k,ifsc);
         SPHelper.setSP(getApplicationContext(),"vpapin"+k,vpaPin);
-        SPHelper.setSP(getApplicationContext(),"apppin"+k,appPin);
+        SPHelper.setSP(getApplicationContext(),"apppin",appPin);
         //++i;
     }
 
@@ -207,7 +219,7 @@ public class MainActivity extends AppCompatActivity
         branch = SPHelper.getSP(getApplicationContext(),"branch"+k,"Jayanagar");
         ifsc = SPHelper.getSP(getApplicationContext(),"ifsc"+k, "ubi00000127+");
         vpaPin = SPHelper.getSP(getApplicationContext(),"vpapin"+k,"1234");
-        appPin = SPHelper.getSP(getApplicationContext(),"apppin"+k,"2345");
+        appPin = SPHelper.getSP(getApplicationContext(),"apppin","2345");
         //++k;
     }
     public void loadAccountBeingUsed(){

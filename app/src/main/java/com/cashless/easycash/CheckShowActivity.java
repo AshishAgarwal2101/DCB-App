@@ -40,19 +40,17 @@ public class CheckShowActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_verified);
 
-        loadAccountBeingUsed();
+       /* loadAccountBeingUsed();
         k=currentAccount;
         phn=getIntent().getStringExtra("phone");
-        bankName=getIntent().getStringExtra("bank");
+        bankName=getIntent().getStringExtra("bank");*/
         in= new Intent(this,PasscodeActivity.class);
         in.putExtra("reason", "hello");
         in.putExtra("id", "id1");
         in.putExtra("amount", 0);
-        in.putExtra("phone",phn);
-        in.putExtra("bank",bankName);
         new LongOperation().execute("");
 
-        myRef = FirebaseDatabase.getInstance().getReference();
+     /*   myRef = FirebaseDatabase.getInstance().getReference();
 
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
@@ -77,7 +75,7 @@ public class CheckShowActivity extends AppCompatActivity {
             }
 
         });
-
+*/
 
         imageView = (GifImageView) findViewById(R.id.show_check_gif);
 
